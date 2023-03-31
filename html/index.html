@@ -58,65 +58,27 @@
         <div class="container-fluid">
             <a class="navbar-brand" style="margin-left: 1rem; font-size: 20px;">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas .text-bg-dark offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-                aria-labelledby="offcanvasWithBothOptionsLabel">
-                <div class="offcanvas-header" style="background-color: var(--background);">
-                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
 
-                <div class="div grid userPic" style="background-color: var(--detalhes);">
-                    <!-- div da imagem e nome do usuário -->
-                    <div>
-                        <img src="../img/profile.png" style="height: 6rem; width: 6rem;">
-                    </div>
-                    <div class="thisContainer">
-                        <h3>Username</h3>
-                    </div>
+            <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
+                <div class="offcanvas-body">
+                  <div>
+                    Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                  </div>
+                </div>
+              </div>
 
-                <div class="offcanvas-body" style="background-color: var(--detalhes);">
-                    <!--Menu-->
-                    <div class="">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 lista">
-                            <li class="nav-item">
-                                <a class="nav-link" href="teste.html">
-                                    <img class="imgMenuItem" src="../img/acervoIcon.png">
-                                    Acervo </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="teste.html">
-                                    <img class="imgMenuItem" src="../img/shuffle.png">
-                                    Random </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="teste.html">
-                                    <img class="imgMenuItem" src="../img/bkp.png">
-                                    Backup </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="teste.html">
-                                    <img class="imgMenuItem" src="../img/settings.png">
-                                    Configurações </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="teste.html">
-                                    <img class="imgMenuItem" src="../img/info.png">
-                                    Informações do App </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
     </nav>
 
     <!--! corpo da página principal -->
-    <div class="container-fluid overflow-hidden text-center">
+    <div class="container-fluid overflow-hidden text-center" style="margin-top: 2%">
         <!--div main-->
         <div class="row gy-5 red" style="position: relative;">
             <!--div externa que porta os carrosséis-->
