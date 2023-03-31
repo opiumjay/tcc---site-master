@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="../css/btnPopUp.css">
     <link rel="stylesheet" href="../css/popUpContent.css">
     <link rel="stylesheet" href="../css/menu.css">
-    <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css" >
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
 
-    
+
 
 </head>
 
@@ -58,19 +58,18 @@
         <div class="container-fluid">
             <a class="navbar-brand" style="margin-left: 1rem; font-size: 20px;">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
-                aria-label="Toggle navigation">
+                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-                aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas .text-bg-dark offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel">
                 <div class="offcanvas-header" style="background-color: var(--background);">
-                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
 
-                <div class="div grid userPic">
+                <div class="div grid userPic" style="background-color: var(--detalhes);">
                     <!-- div da imagem e nome do usuário -->
                     <div>
                         <img src="../img/profile.png" style="height: 6rem; width: 6rem;">
@@ -80,7 +79,7 @@
                     </div>
                 </div>
 
-                <div class="offcanvas-body">
+                <div class="offcanvas-body" style="background-color: var(--detalhes);">
                     <!--Menu-->
                     <div class="">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 lista">
@@ -277,7 +276,7 @@
         <div class="cross">
         </div>
     </div>
-    
+
     <!--! pop up add peça || ARRUMAR A CONTRAÇÃO DOS OPTIONGROUPS-->
     <div id="popup" class="popup">
         <div class="popup-content">
@@ -336,9 +335,10 @@
                 <br>
                 <div>
                     <center><label style="color: #ffffff; font-size: 12px; margin-bottom: 5%; text-align: center;">
-                        Selecione a cor primária da peça:</label>
-                    <input type="color" class="form-control form-control-color"
-                        id="exampleColorInput" value="#563d7c"></center>
+                            Selecione a cor primária da peça:</label>
+                        <input type="color" class="form-control form-control-color" id="exampleColorInput"
+                            value="#563d7c">
+                    </center>
                 </div>
 
                 <div class="input-group mb-3" style="margin-top: 10%;">
@@ -354,7 +354,7 @@
         </div>
     </div>
 
-    
+
 
 </body>
 
