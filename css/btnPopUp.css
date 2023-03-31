@@ -1,0 +1,39 @@
+.circle {
+    position: fixed;
+    width: 25%;
+    padding-bottom: 25%;
+    background-color: var(--primaria);
+    border-radius: 50%;
+    bottom: 30px;
+    left: 30px;
+    z-index: 500;
+}
+
+.cross {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 25%;
+    top: 25%;
+}
+
+.cross:before,
+.cross:after {
+    content: "";
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+}
+
+.cross:before {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.cross:after {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    margin-top: -1px;
+}

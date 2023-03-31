@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+    <!--fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <!--propriedades css-->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/btnPopUp.css">
+    <link rel="stylesheet" href="../css/popUpContent.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css" >
+
+    
+
+</head>
+
+<body>
+    <!--links js off e online-->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+
+    <!--popper js-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+        integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
+        crossorigin="anonymous"></script>
+
+    <!--funções que abre e fecha o pop up-->
+    <script>
+        function showPopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "flex";
+        }
+    </script>
+
+    <script>
+        function hidePopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
+    </script>
+
+    <!--! navbar -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="margin-left: 1rem; font-size: 20px;">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header" style="background-color: var(--background);">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="div grid userPic">
+                    <!-- div da imagem e nome do usuário -->
+                    <div>
+                        <img src="../img/profile.png" style="height: 6rem; width: 6rem;">
+                    </div>
+                    <div class="thisContainer">
+                        <h3>Username</h3>
+                    </div>
+                </div>
+
+                <div class="offcanvas-body">
+                    <!--Menu-->
+                    <div class="">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 lista">
+                            <li class="nav-item">
+                                <a class="nav-link" href="teste.html">
+                                    <img class="imgMenuItem" src="../img/acervoIcon.png">
+                                    Acervo </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="teste.html">
+                                    <img class="imgMenuItem" src="../img/shuffle.png">
+                                    Random </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="teste.html">
+                                    <img class="imgMenuItem" src="../img/bkp.png">
+                                    Backup </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="teste.html">
+                                    <img class="imgMenuItem" src="../img/settings.png">
+                                    Configurações </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="teste.html">
+                                    <img class="imgMenuItem" src="../img/info.png">
+                                    Informações do App </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--! corpo da página principal -->
+    <div class="container-fluid overflow-hidden text-center">
+        <!--div main-->
+        <div class="row gy-5 red" style="position: relative;">
+            <!--div externa que porta os carrosséis-->
+            <div class="">
+                <div class="row">
+                    <!--! div bags -->
+                    <div class="col-6">
+                        <h3>Bags</h3>
+                        <a href="bag.html">
+                            <!--todo: linkar página do acervo filtrado para mochilas-->
+                            <div class="p-3">
+                                <!--div que porta o car 1-->
+                                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active" data-bs-interval="2000">
+                                            <img src="../img/car/backpack.png" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="2000">
+                                            <img src="../img/car/backpack.png" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="2000">
+                                            <img src="../img/car/backpack.png" class="d-block w-100" alt="...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!--! div hats -->
+                    <div class="col-6">
+                        <h3>Hats</h3>
+                        <a href="hat.html">
+                            <!--todo: linkar página do acervo filtrado para chapéus-->
+                            <div class="p-3">
+                                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active" data-bs-interval="2000">
+                                            <img src="../img/car/cap.png" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="2000">
+                                            <img src="../img/car/cap.png" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="2000">
+                                            <img src="../img/car/cap.png" class="d-block w-100" alt="...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                <div class="row">
+                    <!--! div jewelry -->
+                    <div class="col-6">
+                        <h3>Jewelry</h3>
+                        <a href="jew.html">
+                            <!--todo: linkar página do acervo filtrado para acessórios-->
+                            <div class="p-3">
+                                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active" data-bs-interval="2000">
+                                            <img src="../img/car/earrings.png" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="2000">
+                                            <img src="../img/car/earrings.png" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="2000">
+                                            <img src="../img/car/earrings.png" class="d-block w-100" alt="...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!--! div top wear -->
+                    <div class="col-6">
+                        <h3>Top Wear</h3>
+                        <a href="top.html">
+                            <!--todo: linkar página do acervo filtrado para top wear-->
+                            <div class="p-3">
+                                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active" data-bs-interval="2000">
+                                            <img src="../img/car/hoodie.png" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="2000">
+                                            <img src="../img/car/hoodie.png" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="2000">
+                                            <img src="../img/car/hoodie.png" class="d-block w-100" alt="...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                <div class="row">
+                    <!--! under wear -->
+                    <div class="col-6">
+                        <h3>Under Wear</h3>
+                        <a href="under.html">
+                            <!--todo: linkar página do acervo filtrado para calças (under wear)-->
+                            <div class="p-3">
+                                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active" data-bs-interval="2000">
+                                            <img src="../img/car/pants.png" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="2000">
+                                            <img src="../img/car/pants.png" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="2000">
+                                            <img src="../img/car/pants.png" class="d-block w-100" alt="...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!--! div sneakers -->
+                    <div class="col-6">
+                        <h3>Sneakers</h3>
+                        <a href="sneakers.html">
+                            <!--todo: linkar página do acervo filtrado para tênis-->
+                            <div class="p-3">
+                                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active" data-bs-interval="2000">
+                                            <img src="../img/car/shoes.png" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="2000">
+                                            <img src="../img/car/shoes.png" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="2000">
+                                            <img src="../img/car/shoes.png" class="d-block w-100" alt="...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--! botão add peça -->
+    <div class="circle" onclick="showPopup()">
+        <div class="cross">
+        </div>
+    </div>
+    
+    <!--! pop up add peça || ARRUMAR A CONTRAÇÃO DOS OPTIONGROUPS-->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <form>
+                <select id="selecaoDeCategoria" name="selecaoDeCategoria">
+                    <option selected="nullCategoria">Categoria</option>
+                    <optgroup label="Vestuário Superior">
+                        <option value="camisa">Camiseta</option>
+                        <option value="moletom">Moletom</option>
+                        <option value="jaqueta">Jaqueta</option>
+                        <option value="regata">Regata</option>
+                        <option value="manga_longa">Camisa de Manga Longa</option>
+                        <option value="sueter">Suéter</option>
+                        <option value="colote">Colete</option>
+                        <option value="top">Top</option>
+                    </optgroup>
+                    <optgroup label="Vestuário Inferior">
+                        <option value="calca">Calça</option>
+                        <option value="short">Short</option>
+                        <option value="saia">Saia</option>
+                        <option value="bermuda">Bermuda</option>
+                        <option value="legging">Legging</option>
+                    </optgroup>
+                    <optgroup label="itens Para Cabeça">
+                        <option value="bone">Boné</option>
+                        <option value="chapeu">Chapéu </option>
+                        <option value="touca">Touca</option>
+                        <option value="heahband">Headband</option>
+                        <option value="lenco">Lenço</option>
+                    </optgroup>
+                    <optgroup label="Bolsas">
+                        <option value="mochila">Mochila</option>
+                        <option value="tote_bag">Tote Bag</option>
+                        <option value="sling_bag">Sling Bag</option>
+                    </optgroup>
+                    <optgroup label="Acessórios">
+                        <option value="colar">Colar</option>
+                        <option value="anel">Anél</option>
+                        <option value="pulseira">Pulseira</option>
+                        <option value="brinco">Brinco</option>
+                        <option value="pingente">Pingente</option>
+                    </optgroup>
+                    <optgroup label="Tênis">
+                        <option value="value_default">Adicione</option>
+                        <option value="camiseta">Camiseta</option>
+                        <option value="jaqueta">Jaqueta</option>
+                    </optgroup>
+                    <br>
+                </select>
+                <select id="selecaoDeFormato" name="selecaoDeFormato">
+                    <option selected="nullFormato">Formato</option>
+                    <option value="justo">Justo</option>
+                    <option value="normal">Normal</option>
+                    <option value="largo">Largo</option>
+                </select>
+                <br>
+                <div>
+                    <center><label style="color: #ffffff; font-size: 12px; margin-bottom: 5%; text-align: center;">
+                        Selecione a cor primária da peça:</label>
+                    <input type="color" class="form-control form-control-color"
+                        id="exampleColorInput" value="#563d7c"></center>
+                </div>
+
+                <div class="input-group mb-3" style="margin-top: 10%;">
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Enviar</label>
+                </div>
+
+                <div style="display: flex; justify-content: flex-start; margin-top: 10%;">
+                    <button type="button" onclick="hidePopup()">Voltar</button>
+                    <button type="submit">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+
+</body>
+
+</html>

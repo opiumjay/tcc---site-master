@@ -1,0 +1,23 @@
+.userPic{
+    margin-top: 10%;
+}
+
+.lista {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista li {
+    padding: 10px;
+}
+
+.lista li:not(:last-child) {
+    border-bottom: 1px solid #eeeeee70;
+}
+
+.imgMenuItem{
+    height: 30px; 
+    width: 30px;
+    margin-right: 3%;
+}
