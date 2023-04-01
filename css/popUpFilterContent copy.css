@@ -1,4 +1,4 @@
-.containerPop {
+.container-pop-filter {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +6,7 @@
     width: auto;
 }
 
-.popup {
+.popup-filter {
     /*posição e tamanho do popup*/
     position: absolute;
     top: 45%;
@@ -19,21 +19,22 @@
     align-items: center;
 }
 
-.popup-content {
+.popup-filter-content {
     background-color: #202020;
     padding: 10px;
     border-radius: 5px;
     height: 100%;
     width: 100%;
+    margin-top: 225%;
 }
 
-.popup-content h2 {
+.popup-filter-content h2 {
     margin-top: 0;
     color: #ffffff;
     font-size: 20px;
 }
 
-.popup-content select {
+.popup-filter-content select {
     width: 100%;
     padding: 5px;
     margin-top: 5px;
@@ -41,7 +42,7 @@
     font-size: 15px;
 }
 
-.popup-content button {
+.popup-filter-content button {
     margin-top: 5%;
     padding: 5px 10px;
     background-color: var(--detalhes);
@@ -53,19 +54,15 @@
     width: 50%;
 }
 
-.popup-content-input-file {
+.popup-filter-content-input-file {
     padding: 10px 5px;
     cursor: pointer;
 }
 
-.popup-content button:first-child {
+.popup-filter-content button:first-child {
     margin-right: 10px;
 }
 
 .input_file_popUp {
     background-color: var(--detalhes);
-}
-
-.input_color {
-
 }

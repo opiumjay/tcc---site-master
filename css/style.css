@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: var(--background);
+    background-color: #000000;
     font-family: 'Quicksand', sans-serif;
     position: relative;
 }
@@ -27,7 +27,6 @@ body {
     align-items: center;
     height: auto;
 }
-
 
 .pad {
     height: 90vh;
