@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+    <!--fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <!--propriedades css-->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/btnPopUp.css">
+    <link rel="stylesheet" href="../css/popUpContent.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+
+    <style>
+        .btn-space {
+            margin: 0.5rem;
+        }
+
+        .divisoria {
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--detalhes);
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .div-adaptavel {
+            width: 100vw;
+            /* Largura de 50% da largura da janela do navegador */
+            height: 100vh;
+        }
+    </style>
+
+</head>
+
+<body style="background-color: #101010;">
+    <!--links js off e online-->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+
+    <div class="container red div-adaptavel">
+        <div class="container text-center">
+
+            <div class="row row-cols-1">
+
+                <!--colocar três botões-->
+                <div class="row divisoria">
+                    <button type="button" class="btn btn-secondary btn-lg btn-space">Large button</button>
+                    <button type="button" class="btn btn-secondary btn-lg btn-space">Large button</button>
+                    <button type="button" class="btn btn-secondary btn-lg btn-space">Large button</button>
+                </div>
+
+                <!--colocar informações de contato-->
+                <div class="row row-cols-1 red">
+                    <h4 style=" text-decoration: underline;">Contato</h4>
+                </div>
+
+                <div class="row row-cols-2">
+                    <div class="col">Column</div>
+                    <div class="col">Column</div>
+                </div>
+
+                <!--colocar descriação de aplicação-->
+                <div class="col divisoria">Info app</div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
