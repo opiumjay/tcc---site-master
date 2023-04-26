@@ -36,6 +36,24 @@
             /* Largura de 50% da largura da janela do navegador */
             height: 100vh;
         }
+
+        .filho {
+            display: inline-block;
+            /* Torna a div filho em um elemento de bloco em linha */
+            /* Estilos do elemento filho */
+        }
+
+        .pai {
+            display: flex;
+            justify-content: center;
+            /* Centraliza horizontalmente */
+            align-items: center;
+            /* Centraliza verticalmente */
+        }
+
+        .filho {
+            /* Estilos do elemento filho */
+        }
     </style>
 
 </head>
@@ -47,33 +65,35 @@
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
         crossorigin="anonymous"></script>
 
-    <div class="container red div-adaptavel">
-        <div class="container text-center">
+    <div class=" red d-grid div-adaptavel">
+        <div class=" red container text-center">
 
-            <div class="row row-cols-1">
+            <div class=" red  red row row-cols-1">
 
                 <!--colocar três botões-->
-                <div class="row divisoria">
+                <div class=" red row divisoria">
                     <button type="button" class="btn btn-secondary btn-lg btn-space">Large button</button>
                     <button type="button" class="btn btn-secondary btn-lg btn-space">Large button</button>
                     <button type="button" class="btn btn-secondary btn-lg btn-space">Large button</button>
                 </div>
 
                 <!--colocar informações de contato-->
-                <div class="row row-cols-1 red">
+                <div class=" red row row-cols-1 red">
                     <h4 style=" text-decoration: underline;">Contato</h4>
                 </div>
 
-                <div class="row row-cols-2">
-                    <div class="col">Column</div>
-                    <div class="col">Column</div>
+                <div class=" red row row-cols-2">
+                    <div class=" red col">Column</div>
+                    <div class=" red col">Column</div>
                 </div>
 
                 <!--colocar descriação de aplicação-->
-                <div class="col divisoria">Info app</div>
+
 
             </div>
+
         </div>
+        <div class=" red d-flex red col divisoria">Info app</div>
     </div>
 
 
