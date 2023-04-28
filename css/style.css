@@ -3,6 +3,8 @@
     --primaria: #202020;
     --secundaria: #ffffff;
     --detalhes: #454545;
+    --body: #F7F7F7;
+    --header: #303030;
 }
 
 body {
