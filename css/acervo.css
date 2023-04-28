@@ -1,0 +1,12 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    place-items: center;
+  }
+
+  .grid-container img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+  }

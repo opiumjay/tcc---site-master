@@ -17,15 +17,24 @@
     <link rel="stylesheet" href="../css/btnPopUp.css">
     <link rel="stylesheet" href="../css/popUpContent.css">
     <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/acervo.css">
     <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
 
 </head>
 
-<body class="bg-body-secondary">
+<body style="background-color: #000000; font-family: 'Quicksand', sans-serif; position: relative;">
     <!--links js off e online-->
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+
+    <!--popper js-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+        integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
         crossorigin="anonymous"></script>
 
     <!--funções que abre e fecha o pop up-->
@@ -43,47 +52,42 @@
         }
     </script>
 
+    <!--! navbar -->
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="../img/navbar/back.png" alt="Bootstrap" width="30" height="24">
+            </a>
             <a class="navbar-brand" style="margin-left: 1rem; font-size: 20px;">Meu Acervo</a>
-            
-            <button class="navbar-toggler" type="button">
-                <span class="navbar-filter-icon"></span>
-            </button>
-            
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
                 aria-controls="offcanvasExample">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler"><img src="../img/menu/acervo.png"></span>
-            </button> -->
-
             <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasExample"
                 aria-labelledby="offcanvasExampleLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                <div class="offcanvas-header" style="background-color: #000000;">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <div>
                         <div class="userPic">
-                            <img src="../img/profile.png">
+                            <img src="../img/teste.jpeg">
                             <h3>Username</h3>
                         </div>
                         <div class="menu">
                             <ul>
                                 <li>
                                     <a href="acervo.html">
-                                        <img class="btnAcervo" src="../img/menu/menu.png"
-                                            alt="Ícone da opção acervo">Acervo
+                                        <img class="btnAcervo" src="../img/menu/grid.png"
+                                            alt="Ícone da opção acervo">Meu Acervo
                                     </a>
                                 </li>
                                 <li>
                                     <a href="testeopt.html">
-                                        <img class="btnRandom" src="../img/menu/shuffle (1).png"
+                                        <img class="btnRandom" src="../img/menu/shuffle.png"
                                             alt="Ícone da opção acervo">Random
                                     </a>
                                 </li>
@@ -95,7 +99,7 @@
                                 </li>
                                 <li>
                                     <a href="testeopt.html">
-                                        <img class="btnConfig" src="../img/menu/config.png"
+                                        <img class="btnConfig" src="../img/menu/setting.png"
                                             alt="Ícone da opção acervo">Configurações
                                     </a>
                                 </li>
@@ -113,15 +117,44 @@
         </div>
     </nav>
 
+    <!--div principal-->
+    <div style="margin-top: 5%; padding: 2%;">
+
+        <!-- div que porta todo o grid-->
+        <div class="grid-container">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+            <img src="../img/teste.jpeg">
+        </div>
+    </div>
+
     <!--! botão add peça -->
     <div class="circle" onclick="showPopup()">
         <div class="cross">
         </div>
     </div>
 
-     <!--! pop up add peça -->
-     <div id="popup-filter" class="popup-filter red">
-        <div class="popup-filter-content blue">
+    <!--! pop up add peça -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
             <form>
                 <select id="selecaoDeCategoria" name="selecaoDeCategoria">
                     <option selected="nullCategoria">Categoria</option>
