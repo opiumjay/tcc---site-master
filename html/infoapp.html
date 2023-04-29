@@ -50,6 +50,23 @@
             align-items: center;
             /* Centraliza verticalmente */
         }
+
+        #page-container {
+  position: relative;
+  min-height: 93vh;
+  min-height: 93vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+        #footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
     </style>
 
 </head>
@@ -60,15 +77,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
         crossorigin="anonymous"></script>
-
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" style="margin-left: 1rem; font-size: 20px;">Home</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-                aria-controls="offcanvasExample">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
+            <div class="  container text-center">
+                <a class="navbar-brand" style="margin-left: 1rem; font-size: 20px;">
+                    <h6>INFORMAÇÕES DO APP</h6>
+                </a>
+            </div>
             <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasExample"
                 aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header" style="background-color: #000000;">
@@ -123,8 +138,8 @@
 
         </div>
     </nav>
-
-    <div class="red d-block div-adaptavel">
+    <div id="page-container">
+    <div id="content-wrap" class="red d-block div-adaptavel" >
         <div class="  container text-center">
 
             <div class="    row row-cols-1">
@@ -132,36 +147,72 @@
                 <!--colocar três botões-->
 
                 <div class="row divisoria" style="margin-top:10%">
-                    <button type="button" class="btn btn-secondary btn-lg btn-space">Large button</button>
-                    <button type="button" class="btn btn-secondary btn-lg btn-space">Large button</button>
-                    <button type="button" class="btn btn-secondary btn-lg btn-space">Large button</button>
+                    <button type="button" class="btn btn-secondary btn-lg btn-space">
+                        <h6>GUIA DO USUÁRIO</h6>
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-lg btn-space">
+                        <h6>POLÍTICA DE PRIVACIDADE</h6>
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-lg btn-space">
+                        <h6>FEEDBACK</h6>
+                    </button>
                 </div>
+
+
+
+                <table class="table table-dark table-sm">
+                    <thead>
+                        <tr>
+                          <th colspan="2" scope="col">Contato</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-group-divider">
+                        <tr>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                        </tr>
+                        <tr>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                        </tr>
+                        <tr>
+                          <td>Larry the Bird</td>
+                          <td>Larry the Bird</td>
+                        </tr>
+                      </tbody>
+                </table>
+
 
                 <!--colocar informações de contato-->
                 <div class="  row row-cols-1 ">
                     <h4 style="color: white; text-decoration: underline;">Contato</h4>
                 </div>
 
-                <div class="  row row-cols-2">
-                    <div class="  col" style="color: white;">+55 1899399999 <br>
-                        +55 1899399999</div>
-                    <div class="  col" style="color: white;">+55 2109998899 <br>
-                        +55 1899399999</div>
+                <div class="  row row-cols-2" style="margin-top: 3%">
+                    <div class="  col" style="color: white;">+55 18998032218 <br>
+                        +55 18998021097</div>
+                    <div class="  col" style="color: white;" class="  container text-center">kenjisilva12@gmail.com <br>
+                        rhiantavares.silva@gmail.com</div>
+                    <div class="  col" style="color: white;">+55 18997821555 <br>
+                        +55 18991078339</div>
+                    <div class="  col" style="color: white;" class="  container text-center">diego.edemir1055@gmail.com <br>
+                        erick.ogura@etec.sp.gov.br</div>
                 </div>
-                <div class="  row divisoria"></div>
+                <div class="  row divisoria" style="margin-top: 3%"></div>
                 <!--colocar descriação de aplicação-->
-
-
+                
+               
             </div>
-
+            
         </div>
-        <div class="container" style="margin-top:90%">
-            <p>Informações de texto centralizadas.</p>
-        </div>
-    </div>
 
+        <footer id="footer" class="container red "style="color: white;">
+            <center><p><strong>ACERVO DIGITAL ®</strong> <br>
+                <font size="2">DESENVOLVIMENTO DE SISTEMAS - ETEC DE ILHA SOLTEIRA</font>
+            </p></center>
+          </footer>
 
-
+</div>
 </body>
 
 </html>
