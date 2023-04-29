@@ -17,13 +17,12 @@
     display: none;
     justify-content: center;
     align-items: center;
-    box-shadow:0px 0px 300px 200px rgb(0, 0, 0)
+    box-shadow:0px 0px 1000px 1000px rgba(0, 0, 0, 0.750)
 }
 
 .popup-content {
     background-color: #202020;
     padding: 10px;
-    border-radius: 5px;
     height: 100%;
     width: 100%;
 }
@@ -61,12 +60,4 @@
 
 .popup-content button:first-child {
     margin-right: 10px;
-}
-
-.input_file_popUp {
-    background-color: var(--detalhes);
-}
-
-.input_color {
-
 }

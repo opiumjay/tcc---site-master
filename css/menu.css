@@ -3,12 +3,17 @@
     --primaria: #202020;
     --secundaria: #ffffff;
     --detalhes: #454545;
+    --body: #F7F7F7;
+    --header: #303030;
+    --texto_body: #000000;
+    --texto_header: #F7F7F7;
 }
 
 .userPic {
     margin-top: 4%;
     display: grid;
     place-items: center;
+    width: fit-content;
 }
 
 .menu {
@@ -27,7 +32,7 @@
 
 .menu li {
     margin-bottom: 15px;
-    border-bottom: 1px solid var(--detalhes);
+    border-bottom: 1px solid #F7F7F7;
     padding-bottom: 15px;
     font-size: 18px;
 }
@@ -40,7 +45,7 @@
 
 .menu li a {
     text-decoration: none;
-    color: var(--secundaria);
+    color: #F7F7F7;
 }
 
 .btnAcervo {
@@ -49,21 +54,22 @@
 }
 
 .btnRandom {
-    width: 8%;
-    margin-right: 4%;
+    width: 9%;
+    margin-right: 3%;
 }
 
 .btnBackup {
-    width: 10%;
-    margin-right: 2%;
+    width: 9%;
+    margin-right: 3%;
 }   
 
 .btnConfig {
-    width: 8%;
-    margin-right: 4%;
+    width: 9%;
+    margin-right: 3%;
 }
 
 .btnInfo {
-    width: 8%;
-    margin-right: 4%;
+    width: 8.5%;
+    margin-right: 3.5%;
 }
+
