@@ -288,8 +288,9 @@
         <!--! pop up add peça -->
         <div id="popup" class="popup">
             <div class="popup-content">
-                <form>
-                    <select id="selecaoDeCategoria" name="selecaoDeCategoria">
+                <form action="cadastroP.php" method="post" enctype="multipart/form-data">
+
+                    <select id="categoria" name="categoria">
                         <option selected="nullCategoria">Categoria</option>
                         <optgroup label="Vestuário Superior">
                             <option value="camisa">Camiseta</option>
@@ -301,6 +302,7 @@
                             <option value="colote">Colete</option>
                             <option value="top">Top</option>
                         </optgroup>
+
                         <optgroup label="Vestuário Inferior">
                             <option value="calca">Calça</option>
                             <option value="short">Short</option>
@@ -308,6 +310,7 @@
                             <option value="bermuda">Bermuda</option>
                             <option value="legging">Legging</option>
                         </optgroup>
+
                         <optgroup label="itens Para Cabeça">
                             <option value="bone">Boné</option>
                             <option value="chapeu">Chapéu </option>
@@ -315,11 +318,13 @@
                             <option value="heahband">Headband</option>
                             <option value="lenco">Lenço</option>
                         </optgroup>
+
                         <optgroup label="Bolsas">
                             <option value="mochila">Mochila</option>
                             <option value="tote_bag">Tote Bag</option>
                             <option value="sling_bag">Sling Bag</option>
                         </optgroup>
+
                         <optgroup label="Acessórios">
                             <option value="colar">Colar</option>
                             <option value="anel">Anél</option>
@@ -327,10 +332,12 @@
                             <option value="brinco">Brinco</option>
                             <option value="pingente">Pingente</option>
                         </optgroup>
-                            <option value="tenis">Tênis</option>
+                        <option value="tenis">Tênis</option>
                         <br>
                     </select>
-                    <select id="selecaoDeFormato" name="selecaoDeFormato">
+    
+    
+                    <select id="formato" name="formato">
                         <option selected="nullFormato">Formato</option>
                         <option value="justo">Justo</option>
                         <option value="normal">Normal</option>
@@ -340,15 +347,17 @@
                     <div>
                         <center><label style="color: #ffffff; font-size: 15px; margin-bottom: 5%; text-align: center;">
                                 Selecione a cor primária da peça:</label>
-                            <input type="color" class="form-control form-control-color" id="exampleColorInput"
+    
+    
+                            <input type="color" class="form-control form-control-color" id="cor" name="cor" 
                                 value="#563d7c">
                         </center>
                     </div>
-
+    
                     <div class="mb-3" style="margin-top: 10%;">
-                        <input class="form-control form-control-sm input_file_popUp" id="formFileSm" type="file">
+                        <input class="form-control form-control-sm input_file_popUp" name="fileToUpload" id="fileToUpload" type="file">
                     </div>
-
+    
                     <div style="display: flex; justify-content: flex-start; margin-top: 5%;">
                         <button type="button" onclick="hidePopup()">Voltar</button>
                         <button type="submit">Adicionar</button>
