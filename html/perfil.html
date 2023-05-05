@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+    <!--fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <!--propriedades css-->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/btnPopUp.css">
+    <link rel="stylesheet" href="../css/popUpContent.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+
+    <style>
+        .btn-space {
+            margin: 0.5rem;
+        }
+
+        .divisoria {
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--detalhes);
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .div-adaptavel {
+            width: 100%;
+            /* Largura de 50% da largura da janela do navegador */
+            height: 100%;
+        }
+
+        .filho {
+            display: inline-block;
+            /* Torna a div filho em um elemento de bloco em linha */
+            /* Estilos do elemento filho */
+        }
+
+        .pai {
+            display: flex;
+            justify-content: center;
+            /* Centraliza horizontalmente */
+            align-items: center;
+            /* Centraliza verticalmente */
+        }
+
+        #page-container {
+            position: relative;
+            min-height: 93vh;
+            min-height: 93vh;
+        }
+
+        #content-wrap {
+            padding-bottom: 2.5rem;
+            /* Footer height */
+        }
+
+        #footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 2.5rem;
+            /* Footer height */
+        }
+
+        .inputtrans {
+            background: transparent;
+            border: none;
+        }
+    </style>
+
+</head>
+
+<body style="background-color: #101010;">
+    <!--links js off e online-->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="  container text-center">
+                <a class="navbar-brand" style="margin-left: 1rem; font-size: 20px;">
+                    <h6>PERFIL</h6>
+                </a>
+            </div>
+            <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasExample"
+                aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header" style="background-color: #000000;">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div>
+                        <div class="userPic">
+                            <img src="../img/profile.png">
+                            <h3>Username</h3>
+                        </div>
+                        <div class="menu">
+                            <ul>
+                                <li>
+                                    <a href="acervo.html">
+                                        <img class="btnAcervo" src="../img/menu/grid.png"
+                                            alt="Ícone da opção acervo">Acervo
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="testeopt.html">
+                                        <img class="btnRandom" src="../img/menu/shuffle.png"
+                                            alt="Ícone da opção acervo">Random
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="testeopt.html">
+                                        <img class="btnBackup" src="../img/menu/bkp.png"
+                                            alt="Ícone da opção acervo">Backup
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="testeopt.html">
+                                        <img class="btnConfig" src="../img/menu/setting.png"
+                                            alt="Ícone da opção acervo">Configurações
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="testeopt.html">
+                                        <img class="btnInfo" src="../img/menu/info.png"
+                                            alt="Ícone da opção acervo">Informações do Aplicativo
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <div id="page-container">
+        <div id="content-wrap" class="d-block div-adaptavel">
+            <form method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <div class="text-center">
+                        <img src="../img/cadusr/profile.png" class="rounded" alt="...">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="profile-pic">Selecione uma imagem para o seu perfil:</label>
+                        <input type="file" name="profile-pic" id="profile-pic">
+                    </div>
+
+
+                    <div class="mb-3">
+                        <div class="row divisoria" style="margin-top:1%">
+                            <input class="form-control inputtrans" type="text" name="username"
+                                placeholder="NOME DE USUÁRIO">
+
+                        </div>
+
+                    </div>
+                    <div class="mb-3">
+                        <div class="row divisoria" style="margin-top:0.5%">
+                            <input class="form-control inputtrans" type="email" name="email"
+                                placeholder="EMAIL DE USUÁRIO">
+
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row divisoria" style="margin-top:1%">
+                            <input class="form-control inputtrans" type="password" name="password" placeholder="SENHA">
+
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
