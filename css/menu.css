@@ -37,6 +37,14 @@
     font-size: 18px;
 }
 
+.borda-inf {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #F7F7F7;
+}
+
 .menu li:last-child {
     margin-bottom: 0;
     border-bottom: none;
@@ -61,7 +69,7 @@
 .btnBackup {
     width: 9%;
     margin-right: 3%;
-}   
+}
 
 .btnConfig {
     width: 9%;
@@ -72,4 +80,3 @@
     width: 8.5%;
     margin-right: 3.5%;
 }
-

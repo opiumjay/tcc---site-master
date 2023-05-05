@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -20,70 +20,64 @@
     <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
 
     <style>
-        .btn-space {
-            margin: 0.5rem;
+        h3 {
+            color: var(--text);
+            font-size: 20px;
+            font-family: 'Quicksand', sans-serif;
         }
 
-        .divisoria {
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--detalhes);
-            padding-bottom: 10px;
-            font-size: 18px;
+        .button {
+            color: var(--bs-white);
+            background-color: #00000050;
         }
-
-        .div-adaptavel {
-            width: 100%;
-            /* Largura de 50% da largura da janela do navegador */
-            height: 100%;
-        }
-
-        .filho {
-            display: inline-block;
-            /* Torna a div filho em um elemento de bloco em linha */
-            /* Estilos do elemento filho */
-        }
-
-        .pai {
-            display: flex;
-            justify-content: center;
-            /* Centraliza horizontalmente */
-            align-items: center;
-            /* Centraliza verticalmente */
-        }
-
-        #page-container {
-  position: relative;
-  min-height: 93vh;
-  min-height: 93vh;
-}
-
-#content-wrap {
-  padding-bottom: 2.5rem;    /* Footer height */
-}
-
-        #footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;            /* Footer height */
-}
     </style>
 
 </head>
 
-<body style="background-color: #101010;">
+<body style="background-color: #303030; font-family: 'Quicksand', sans-serif; position: relative;">
+
     <!--links js off e online-->
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
         crossorigin="anonymous"></script>
-    <nav class="navbar navbar-dark bg-dark">
+
+    <!--popper js-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+        integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
+        crossorigin="anonymous"></script>
+
+    <!--funções que abre e fecha o pop up-->
+    <script>
+        function showPopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "flex";
+        }
+    </script>
+
+    <script>
+        function hidePopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
+    </script>
+
+    <!--! navbar -->
+    <nav class="navbar navbar-dark" style="background-color: #000000;">
         <div class="container-fluid">
-            <div class="  container text-center">
-                <a class="navbar-brand" style="margin-left: 1rem; font-size: 20px;">
-                    <h6>INFORMAÇÕES DO APP</h6>
-                </a>
-            </div>
+            <a class="" href="index.html">
+                <img src="../img/navbar/back.png" alt="Bootstrap" width="25" height="25">
+            </a>
+            <a class="navbar-brand" style="margin-left: 4%; font-size: 20px; color: #F7F7F7;">Informações do App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--menu-->
             <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasExample"
                 aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header" style="background-color: #000000;">
@@ -91,103 +85,126 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
-                    <div>
+                <div class="offcanvas-body" style="background-color: #303030;">
+                    <div class="d-grid" style="place-items: center;">
                         <div class="userPic">
-                            <img src="../img/profile.png">
-                            <h3>Username</h3>
+                            <img style="width: 30%;" src="../img/menu_dark/perfil.png">
+                            <h1 style="margin-top: 5%; color: #e7e7e7;">Username</h1>
                         </div>
                         <div class="menu">
                             <ul>
                                 <li>
-                                    <a href="acervo.html">
-                                        <img class="btnAcervo" src="../img/menu/grid.png"
+                                    <a href="index.html">
+                                        <img class="btnAcervo" src="../img/menu_dark/home.png"
+                                            alt="Ícone da opção acervo">Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="acervo.php">
+                                        <img class="btnAcervo" src="../img/menu_dark/layout.png"
                                             alt="Ícone da opção acervo">Acervo
                                     </a>
                                 </li>
                                 <li>
                                     <a href="testeopt.html">
-                                        <img class="btnRandom" src="../img/menu/shuffle.png"
+                                        <img class="btnRandom" src="../img/menu_dark/shuffle-arrows.png"
                                             alt="Ícone da opção acervo">Random
                                     </a>
                                 </li>
                                 <li>
                                     <a href="testeopt.html">
-                                        <img class="btnBackup" src="../img/menu/bkp.png"
+                                        <img class="btnBackup" src="../img/menu_dark/copia-de-seguranca.png"
                                             alt="Ícone da opção acervo">Backup
                                     </a>
                                 </li>
                                 <li>
                                     <a href="testeopt.html">
-                                        <img class="btnConfig" src="../img/menu/setting.png"
+                                        <img class="btnConfig" src="../img/menu_dark/config.png"
                                             alt="Ícone da opção acervo">Configurações
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="testeopt.html">
-                                        <img class="btnInfo" src="../img/menu/info.png"
-                                            alt="Ícone da opção acervo">Informações do Aplicativo
                                     </a>
                                 </li>
                             </ul>
                         </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
     </nav>
-    <div id="page-container">
-    <div id="content-wrap" class="d-block div-adaptavel" >
-        <div class="  container text-center">
 
-            <div class="    row row-cols-1">
+    <!--div main-->
+    <div class="d-block" style="padding: 5%;">
 
-                <!--colocar três botões-->
-
-                <div class="row divisoria" style="margin-top:10%">
-                    <button type="button" class="btn btn-secondary btn-lg btn-space">
-                        <h6>GUIA DO USUÁRIO</h6>
-                    </button>
-                    <button type="button" class="btn btn-secondary btn-lg btn-space">
-                        <h6>POLÍTICA DE PRIVACIDADE</h6>
-                    </button>
-                    <button type="button" class="btn btn-secondary btn-lg btn-space">
-                        <h6>FEEDBACK</h6>
-                    </button>
+        <!--div botões-->
+        <div class="d-grid">
+            <div class="row row-cols-1">
+                <div class="col" style="padding: 1%;">
+                    <div class="d-grid gap-2">
+                        <button class="btn button" style="--bs-btn-padding-y: .65rem; --bs-btn-font-size: 1rem;"
+                            type="button">Guia do Usuário
+                        </button>
+                    </div>
                 </div>
-
-                <!--colocar informações de contato-->
-                <div class="  row row-cols-1 ">
-                    <h4 style="color: white; text-decoration: underline;">Contato</h4>
+                <div class="col" style="padding: 1%;">
+                    <div class="d-grid gap-2">
+                        <button class="btn button" style="--bs-btn-padding-y: .65rem; --bs-btn-font-size: 1rem;"
+                            type="button">Política de Privacidade
+                        </button>
+                    </div>
                 </div>
-
-                <div class="  row row-cols-2" style="margin-top: 3%">
-                    <div class="  col" style="color: white;">+55 18998032218 <br>
-                        +55 18998021097</div>
-                    <div class="  col" style="color: white;" class="  container text-center">kenjisilva12@gmail.com <br>
-                        rhiantavares.silva@gmail.com</div>
-                    <div class="  col" style="color: white;">+55 18997821555 <br>
-                        +55 18991078339</div>
-                    <div class="  col" style="color: white;" class="  container text-center">diego.edemir1055@gmail.com <br>
-                        erick.ogura@etec.sp.gov.br</div>
+                <div class="col" style="padding: 1%;">
+                    <div class="d-grid gap-2">
+                        <button class="btn button" style="--bs-btn-padding-y: .65rem; --bs-btn-font-size: 1rem;"
+                            type="button">Feedback
+                        </button>
+                    </div>
                 </div>
-                <div class="  row divisoria" style="margin-top: 3%"></div>
-                <!--colocar descriação de aplicação-->
-                
-               
             </div>
-            
         </div>
 
-        <footer id="footer" class="container"style="color: white;">
-            <center><p><strong>ACERVO DIGITAL ®</strong> <br>
-                <font size="2">DESENVOLVIMENTO DE SISTEMAS - ETEC DE ILHA SOLTEIRA</font>
-            </p></center>
-          </footer>
+        <!--divisor-->
+        <hr class="border border-secondary border-1 opacity-25">
 
-</div>
+        <!--div título contatos-->
+        <div class="d-block text-center" style="margin-bottom: 5%; margin-top: 5%;">
+            <h3>Contatos</h3>
+        </div>
+
+        <!--div informações contatos-->
+        <div class="container text-center" style="color: #ffffff;">
+            <div class="row" style="background-color: #00000050; padding: 3%; border-radius: 10px;">
+                <div class="col-sm">Diego Edemir:</div>
+                <div class="col-sm">diego.edemir@unesp.br</div>
+                <div class="col-sm">@______opiumjay</div>
+            </div><br>
+            <div class="row">
+                <div class="col-sm">Kenji Takabayashi:</div>
+                <div class="col-sm">kenjisilva12@gmail.com</div>
+                <div class="col-sm">+55 18 99803-2218</div>
+            </div><br>
+            <div class="row" style="background-color: #00000050; padding: 3%; border-radius: 10px;">
+                <div class="col-sm">Erick Akira:</div>
+                <div class="col-sm">erick.ogura@etec.sp.gov.br</div>
+                <div class="col-sm">+55 18 99107-8339</div>
+            </div><br>
+            <div class="row">
+                <div class="col-sm">Rhian Tavares:</div>
+                <div class="col-sm">rhiantavares.silva@gmail.com</div>
+                <div class="col-sm">+55 18 99802-1097</div>
+            </div>
+        </div>
+
+        <!--divisor-->
+        <hr class="border border-secondary border-1 opacity-25">
+    </div>
+
+    <!--footer com o nome da aplicação-->
+    <footer id="footer" class="container" style="color: white;">
+        <center>
+            <p><strong>ACERVO DIGITAL ®</strong> <br>
+                <font size="2">DESENVOLVIMENTO DE SISTEMAS <br> ETEC DE ILHA SOLTEIRA</font>
+            </p>
+        </center>
+    </footer>
 </body>
 
 </html>

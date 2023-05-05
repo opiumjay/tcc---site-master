@@ -56,12 +56,12 @@ body {
     justify-content: center;
 }
 
-.container {
+/* .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: auto;
-}
+} */
 
 select {
     background-color: #202020;
