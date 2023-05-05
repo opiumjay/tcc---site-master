@@ -3,29 +3,34 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 
-    <!--fontes-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+        <!--fontes-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 
-    <!--propriedades css-->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/btnPopUp.css">
-    <link rel="stylesheet" href="../css/popUpContent.css">
-    <link rel="stylesheet" href="../css/menu.css">
-    <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+        <!--propriedades css-->
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/btnPopUp.css">
+        <link rel="stylesheet" href="../css/popUpContent.css">
+        <link rel="stylesheet" href="../css/menu.css">
+        <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
 
-    <style>
-        h3 {
-            color: #ffffff;
-            font-size: 20px;
-            font-family: 'Quicksand', sans-serif;
-        }
-    </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <style>
+            h3 {
+                color: var(--text);
+                font-size: 20px;
+                font-family: 'Quicksand', sans-serif;
+            }
+        </style>
 
 </head>
 
@@ -123,6 +128,28 @@
         </div>
     </nav>
 
+    <div>
+        <div>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseWidthExample" aria-expanded="true" aria-controls="collapseWidthExample">
+                Toggle width collapse
+            </button>
+            </p>
+            <div class="d-block" style="max-height: 600px;">
+                <div class="collapse-horizontal collapse show" id="collapseWidthExample">
+                    <div class="card card-body" style="width: 300px;">
+                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="Nome da nova categoria"><br>
+                        <div class="row text-end">
+                            <div class="col"><button class="btn btn-primary" type="button">Button</button></div>
+                            <div class="col"><button class="btn btn-primary" type="button">Button</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--! botão add peça -->
     <div class="circle" onclick="showPopup()">
         <div class="cross">
@@ -132,8 +159,9 @@
     <!--! pop up add peça -->
     <div id="popup" class="popup">
         <div class="popup-content">
-            <form>
-                <select id="selecaoDeCategoria" name="selecaoDeCategoria">
+            <form action="cadastroP.php" method="post" enctype="multipart/form-data">
+
+                <select id="categoria" name="categoria">
                     <option selected="nullCategoria">Categoria</option>
                     <optgroup label="Vestuário Superior">
                         <option value="camisa">Camiseta</option>
@@ -145,6 +173,7 @@
                         <option value="colote">Colete</option>
                         <option value="top">Top</option>
                     </optgroup>
+
                     <optgroup label="Vestuário Inferior">
                         <option value="calca">Calça</option>
                         <option value="short">Short</option>
@@ -152,6 +181,7 @@
                         <option value="bermuda">Bermuda</option>
                         <option value="legging">Legging</option>
                     </optgroup>
+
                     <optgroup label="itens Para Cabeça">
                         <option value="bone">Boné</option>
                         <option value="chapeu">Chapéu </option>
@@ -159,11 +189,13 @@
                         <option value="heahband">Headband</option>
                         <option value="lenco">Lenço</option>
                     </optgroup>
+
                     <optgroup label="Bolsas">
                         <option value="mochila">Mochila</option>
                         <option value="tote_bag">Tote Bag</option>
                         <option value="sling_bag">Sling Bag</option>
                     </optgroup>
+
                     <optgroup label="Acessórios">
                         <option value="colar">Colar</option>
                         <option value="anel">Anél</option>
@@ -171,14 +203,12 @@
                         <option value="brinco">Brinco</option>
                         <option value="pingente">Pingente</option>
                     </optgroup>
-                    <optgroup label="Tênis">
-                        <option value="value_default">Adicione</option>
-                        <option value="camiseta">Camiseta</option>
-                        <option value="jaqueta">Jaqueta</option>
-                    </optgroup>
+                    <option value="tenis">Tênis</option>
                     <br>
                 </select>
-                <select id="selecaoDeFormato" name="selecaoDeFormato">
+
+
+                <select id="formato" name="formato">
                     <option selected="nullFormato">Formato</option>
                     <option value="justo">Justo</option>
                     <option value="normal">Normal</option>
@@ -188,13 +218,15 @@
                 <div>
                     <center><label style="color: #ffffff; font-size: 15px; margin-bottom: 5%; text-align: center;">
                             Selecione a cor primária da peça:</label>
-                        <input type="color" class="form-control form-control-color" id="exampleColorInput"
-                            value="#563d7c">
+
+
+                        <input type="color" class="form-control form-control-color" id="cor" name="cor" value="#563d7c">
                     </center>
                 </div>
 
                 <div class="mb-3" style="margin-top: 10%;">
-                    <input class="form-control form-control-sm input_file_popUp" id="formFileSm" type="file">
+                    <input class="form-control form-control-sm input_file_popUp" name="fileToUpload" id="fileToUpload"
+                        type="file">
                 </div>
 
                 <div style="display: flex; justify-content: flex-start; margin-top: 5%;">
