@@ -29,44 +29,6 @@
             font-size: 20px;
             font-family: 'Quicksand', sans-serif;
         }
-
-        h5 {
-            margin-top: 2%;
-            margin-bottom: -4%;
-            font-size: 18px;
-        }
-
-        .card {
-            margin-bottom: 5%;
-            background-color: #000000;
-            color: #e7e7e7;
-        }
-
-        .form-text {
-            color: #e7e7e7;
-            margin-bottom: 5%;
-            margin-top: 3%;
-            opacity: 75%;
-        }
-
-        .card-body {
-            margin-top: -5%;
-        }
-
-        .input-text::placeholder {
-            color: #e7e7e7;
-            opacity: 50%;
-        }
-
-        .input-text {
-            color: #e7e7e7;
-            opacity: 80%;
-        }
-
-        .button {
-            color: var(--bs-white);
-            background-color: #303030;
-        }
     </style>
 
 </head>
@@ -112,10 +74,10 @@
     <!--! navbar -->
     <nav class="navbar navbar-dark" style="background-color: #000000;">
         <div class="container-fluid">
-            <a class="" href="index.html">
+            <a class="" href="criar_classificacao.html">
                 <img src="../img/navbar/back.png" alt="Bootstrap" width="25" height="25">
             </a>
-            <a class="navbar-brand" style="margin-right: 0; font-size: 20px;">Criar Classificação</a>
+            <a class="navbar-brand" style="margin-left: 1rem; font-size: 20px;">Cores Cadastradas</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
                 aria-controls="offcanvasExample">
                 <span class="navbar-toggler-icon"></span>
@@ -137,6 +99,12 @@
                         </div>
                         <div class="menu">
                             <ul>
+                                <li>
+                                    <a href="index.html">
+                                        <img class="btnAcervo" src="../img/menu_dark/home.png"
+                                            alt="Ícone da opção acervo">Home
+                                    </a>
+                                </li>
                                 <li>
                                     <a href="acervo.php">
                                         <img class="btnAcervo" src="../img/menu_dark/layout.png"
@@ -177,112 +145,99 @@
     </nav>
 
     <!--div main-->
-    <div class="d-block" style="margin: 5%;">
-
-        <!--div que porta o card e o collapse da classificações criadas-->
-        <div>
-            <!--div card para criar nova categoria-->
-            <div class="card text-center">
-                <div class="card-header">
-                    <h5 style="margin-top: 2%; margin-bottom: -4%;">Nova Categoria</h5>
-                </div>
-
-                <!--divisor-->
-                <hr class="border border-secondary border-1 opacity-25">
-
-                <div class="card-body">
-                    <form action="categoriaC.php">
-                        <input type="text" id="input-nome-categoria-nova"
-                            class="form-control text-bg-dark p-3 input-text focus-ring focus-ring-secondary text-decoration-none rounded-2"
-                            placeholder="Adicionar Catergoria Nova"
-                            style="background-color: #303030; border-color: #303030;">
-                        <div id="passwordHelpBlock" class="form-text">
-                            O nome da categoria nova deve ser simples.
-                        </div>
-                        <div class="d-flex justify-content-center p-2">
-                            <!-- <a href="formatos_cadastrados.html" class="btn button">Formatos Cadastradas</a>
-                            <button type="submit" class="btn btn-success">Adicionar</button> -->
-                            <a href="categorias_cadastradas.html" class="btn button"
-                                style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 1rem;">
-                                Cadastrados
-                            </a>
-                            <button type="button" class="btn btn-outline-success"
-                                style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 1rem; margin-left: 4%;">
-                                Adicionar
+    <div class="d-block table-responsive" style="margin: 5%;">
+        <table class="table table-responsive align-middle" style="color: #e7e7e7;">
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td class="text-break text-center">
+                        <input type="color" class="form-control form-control-color bg-dark border border-dark"
+                            id="exampleColorInput" value="#000000" style="margin-top: -3%;" disabled>
+                    </td>
+                    <td>
+                        <p style="margin-top: 1rem;">#000000</p>
+                    </td>
+                    <td>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-outline-warning"
+                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
+                                Alterar
+                            </button>
+                            <button type="button" class="btn btn-outline-danger"
+                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
+                                Excluir
                             </button>
                         </div>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-
-
-        <!--div card para criar novo formato-->
-        <div class="card text-center">
-            <div class="card-header">
-                <h5 style="margin-top: 2%; margin-bottom: -4%;">Novo Formato</h5>
-            </div>
-
-            <!--divisor-->
-            <hr class="border border-secondary border-1 opacity-25">
-
-            <div class="card-body">
-                <form action="categoriaC.php">
-                    <div class="d-flex justify-content-center p-2">
-                        <input type="text" id="input-nome-categoria-nova"
-                            class="form-control text-bg-dark p-3 input-text focus-ring focus-ring-secondary text-decoration-none rounded-2"
-                            placeholder="Adicionar Foramto Novo"
-                            style="background-color: #303030; border-color: #303030;">
-                    </div>
-                    <div id="passwordHelpBlock" class="form-text">
-                        O nome do formato novo deve ser simples.
-                    </div>
-                    <div class="d-flex justify-content-center p-2">
-                        <!-- <a href="formatos_cadastrados.html" class="btn button">Formatos Cadastradas</a>
-                        <button type="submit" class="btn btn-success">Adicionar</button> -->
-                        <a href="formatos_cadastrados.html" class="btn button"
-                            style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 1rem;">
-                            Cadastrados
-                        </a>
-                        <button type="button" class="btn btn-outline-success"
-                            style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 1rem; margin-left: 4%;">
-                            Adicionar
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!--div card para criar nova cor-->
-        <div class="card text-center">
-            <div class="card-header">
-                <h5 style="margin-top: 2%; margin-bottom: -4%;">Nova Cor</h5>
-            </div>
-
-            <!--divisor-->
-            <hr class="border border-secondary border-1 opacity-25">
-
-            <div class="card-body">
-                <form action="categoriaC.php">
-                    <div class="d-flex justify-content-center p-2">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td class="text-break text-center">
                         <input type="color" class="form-control form-control-color bg-dark border border-dark"
-                            id="exampleColorInput" value="#563d7c" style="margin-top: -3%;">
-                    </div>
-                    <div class="d-flex justify-content-center p-2">
-                        <!-- <a href="formatos_cadastrados.html" class="btn button">Formatos Cadastradas</a>
-                        <button type="submit" class="btn btn-success">Adicionar</button> -->
-                        <a href="cores_cadastradas.html" class="btn button"
-                            style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 1rem;">
-                            Cadastrados
-                        </a>
-                        <button type="button" class="btn btn-outline-success"
-                            style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 1rem; margin-left: 4%;">
-                            Adicionar
-                        </button>
-                </form>
-            </div>
-        </div>
+                            id="exampleColorInput" value="#000000" style="margin-top: -3%;" disabled>
+                    </td>
+                    <td>
+                        <p style="margin-top: 1rem;">#000000</p>
+                    </td>
+                    <td>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-outline-warning"
+                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
+                                Alterar
+                            </button>
+                            <button type="button" class="btn btn-outline-danger"
+                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
+                                Excluir
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td class="text-break text-center">
+                        <input type="color" class="form-control form-control-color bg-dark border border-dark"
+                            id="exampleColorInput" value="#000000" style="margin-top: -3%;" disabled>
+                    </td>
+                    <td>
+                        <p style="margin-top: 1rem;">#000000</p>
+                    </td>
+                    <td>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-outline-warning"
+                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
+                                Alterar
+                            </button>
+                            <button type="button" class="btn btn-outline-danger"
+                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
+                                Excluir
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td class="text-break text-center">
+                        <input type="color" class="form-control form-control-color bg-dark border border-dark"
+                            id="exampleColorInput" value="#000000" style="margin-top: -3%;" disabled>
+                    </td>
+                    <td>
+                        <p style="margin-top: 1rem;">#000000</p>
+                    </td>
+                    <td>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-outline-warning"
+                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
+                                Alterar
+                            </button>
+                            <button type="button" class="btn btn-outline-danger"
+                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
+                                Excluir
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 </body>

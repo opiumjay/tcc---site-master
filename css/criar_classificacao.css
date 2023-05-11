@@ -1,0 +1,36 @@
+h5 {
+    margin-top: 2%;
+    margin-bottom: -4%;
+}
+
+.card {
+    margin-bottom: 5%;
+    background-color: #000000;
+    color: #e7e7e7;
+}
+
+.form-text {
+    color: #e7e7e7;
+    margin-bottom: 5%;
+    margin-top: 3%;
+    opacity: 75%;
+}
+
+.card-body {
+    margin-top: -5%;
+}
+
+.input-text::placeholder {
+    color: #e7e7e7;
+    opacity: 50%;
+}
+
+.input-text {
+    color: #e7e7e7;
+    opacity: 80%;
+}
+
+.button {
+    color: var(--bs-white);
+    background-color: #303030;
+}
