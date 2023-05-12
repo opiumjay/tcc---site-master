@@ -22,7 +22,7 @@
 
 </head>
 
-<body style="background-color: #303030; font-family: 'Quicksand', sans-serif; position: relative;">
+<body style="background-color: #000000; font-family: 'Quicksand', sans-serif; position: relative;">
     <!--links js off e online-->
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
@@ -209,18 +209,113 @@
 
         <!-- div que porta todo o grid-->
         <div class="grid-container">
-            <?php
-            require_once 'conectaBanco.php';
+
+
+
+		<?php 
+
+require_once 'conectaBanco.php';
             try {
-                $sql = "SELECT * FROM imagem";
-                $stmt = $pdo->query($sql)->fetchAll();
-                ?>
-                <?php
-                foreach ($stmt as $row) {
-                    ?><img src=" <?php echo $row['imagem'] ?>"> <?php }
+
+
+			    $categoria = $_POST['categoria'];
+			    $formato = $_POST['formato'];
+
+			    if ($categoria=='null') {
+
+	            $sql = "SELECT idformato FROM formato where formato= :formato";
+	            $stmt = $pdo->prepare($sql);
+	            $stmt->execute(array(':formato'=>$formato));
+	            $result = $stmt->fetchAll();
+	            $twotrue = $result[0]['idformato'];
+
+
+			    $sql = "SELECT idprincipal FROM principal where formato=$twotrue";
+			    $stmt = $pdo->query($sql);
+			    $result = $stmt->fetchAll();
+
+                foreach ($result as $row) {
+					$passerby = $row['idprincipal'];
+					$sql = "SELECT * FROM imagem where idprincipal=$passerby";
+					$stmt = $pdo->query($sql)->fetchAll();
+					?>
+					<?php
+					foreach ($stmt as $row) {
+						?><img src=" <?php echo $row['imagem'] ?>"> <?php }
+
+                }
+
+
+
+			    }else{if ($formato=='null'){
+
+			    $sql = "SELECT idcategoria FROM categoria where categoria = :categoria";
+	            $stmt = $pdo->prepare($sql);
+	            $stmt->execute(array(':categoria'=>$categoria));
+	            $result = $stmt->fetchAll();
+	            $onetrue = $result[0]['idcategoria'];
+	            
+
+			    $sql = "SELECT idprincipal FROM principal where categoria=$onetrue";
+			    $stmt = $pdo->query($sql);
+			    $result = $stmt->fetchAll();
+
+                foreach ($result as $row) {
+					$passerby = $row['idprincipal'];
+					$sql = "SELECT * FROM imagem where idprincipal=$passerby";
+					$stmt = $pdo->query($sql)->fetchAll();
+					?>
+					<?php
+					foreach ($stmt as $row) {
+						?><img src=" <?php echo $row['imagem'] ?>"> <?php }
+
+                }
+
+
+
+
+			    }else{
+
+			    $sql = "SELECT idcategoria FROM categoria where categoria = :categoria";
+	            $stmt = $pdo->prepare($sql);
+	            $stmt->execute(array(':categoria'=>$categoria));
+	            $result = $stmt->fetchAll();
+	            $onetrue = $result[0]['idcategoria'];
+	            
+
+	            $sql = "SELECT idformato FROM formato where formato= :formato";
+	            $stmt = $pdo->prepare($sql);
+	            $stmt->execute(array(':formato'=>$formato));
+	            $result = $stmt->fetchAll();
+	            $twotrue = $result[0]['idformato'];
+
+			    $sql = "SELECT idprincipal FROM principal where formato=$twotrue and categoria=$onetrue";
+			    $stmt = $pdo->query($sql);
+			    $result = $stmt->fetchAll();
+
+                foreach ($result as $row) {
+					$passerby = $row['idprincipal'];
+					$sql = "SELECT * FROM imagem where idprincipal=$passerby";
+					$stmt = $pdo->query($sql)->fetchAll();
+					?>
+					<?php
+					foreach ($stmt as $row) {
+						?><img src=" <?php echo $row['imagem'] ?>"> <?php }
+
+                }
+
+
+
+
+
+
+
+			    }}
             } catch (PDOException $e) {
 
-            } ?>
+            } 
+
+?>
         </div>
 
         <!--! botão add peça -->
@@ -237,7 +332,7 @@
                     <select id="categoria" name="categoria">
                         <option selected="nullCategoria">Categoria</option>
                         <optgroup label="Vestuário Superior">
-                            <option value="camisa">Camiseta</option>
+                            <option value="camiseta">Camiseta</option>
                             <option value="moletom">Moletom</option>
                             <option value="jaqueta">Jaqueta</option>
                             <option value="regata">Regata</option>
