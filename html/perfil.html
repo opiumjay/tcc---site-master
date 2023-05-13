@@ -71,9 +71,31 @@
         }
 
         .inputtrans {
-            background: transparent;
-            border: none;
+            background: transparent !important;
+            border: none !important;
+            color: white !important;
         }
+
+        ::-webkit-input-placeholder {
+    color:white;
+}
+
+::-moz-placeholder {
+    color:white;
+}
+
+::-ms-placeholder {
+    color:white;
+}
+
+::placeholder {
+    color:white;
+}
+
+        hr {
+            border: 1px solid rgb(255, 255, 255);
+        }
+
     </style>
 
 </head>
@@ -145,40 +167,34 @@
 
         </div>
     </nav>
-    <div id="page-container">
+    <div class="container-fluid" id="page-container">
         <div id="content-wrap" class="d-block div-adaptavel">
             <form method="post" enctype="multipart/form-data">
                 <fieldset>
-                    <div class="text-center">
-                        <img src="../img/cadusr/profile.png" class="rounded" alt="...">
+                    <center><div class="text-center" style="display: inline-grid;">
+                        <img src="../img/cadusr/profile.png" class="rounded" alt="..." >
+                        <a href="#" style="color: white;">
+                            
+                                Alterar foto
+                        </a>
+                    </div></center>
+
+                    <div class="mb-3">
+                        <label for="profile-pic" class="inputtrans">Selecione uma imagem para o seu perfil:</label>
+                        <input class="inputtrans" type="file" name="profile-pic" id="profile-pic">
                     </div>
 
                     <div class="mb-3">
-                        <label for="profile-pic">Selecione uma imagem para o seu perfil:</label>
-                        <input type="file" name="profile-pic" id="profile-pic">
-                    </div>
-
-
-                    <div class="mb-3">
-                        <div class="row divisoria" style="margin-top:1%">
-                            <input class="form-control inputtrans" type="text" name="username"
-                                placeholder="NOME DE USUÁRIO">
-
-                        </div>
-
+                        <input class="inputtrans" type="text" name="username" placeholder="NOME DE USUÁRIO">
+                        <hr>
                     </div>
                     <div class="mb-3">
-                        <div class="row divisoria" style="margin-top:0.5%">
-                            <input class="form-control inputtrans" type="email" name="email"
-                                placeholder="EMAIL DE USUÁRIO">
-
-                        </div>
+                        <input class="inputtrans" type="email" name="email" placeholder="EMAIL DE USUÁRIO">
+                        <hr>
                     </div>
                     <div class="mb-3">
-                        <div class="row divisoria" style="margin-top:1%">
-                            <input class="form-control inputtrans" type="password" name="password" placeholder="SENHA">
-
-                        </div>
+                        <input class="inputtrans" type="password" name="password" placeholder="SENHA">
+                        <hr>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
