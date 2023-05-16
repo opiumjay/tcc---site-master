@@ -7,12 +7,22 @@ if (!empty($_POST)) {
 
   try {
 
-    $categoria = $_POST['categoria'];
+    $categoria = $_POST['categoria'];    
+    $valuer = 1;
+
+
+    $sql = "SELECT idcategoria FROM categoria";
+    $stmt = $pdo->query($sql);
+    $result = $stmt->fetchAll();
+
+    foreach ($result as $row) {
+      $valuer = $valuer + 1;
+            }
     
            
-            $sql = "INSERT INTO categoria (categoria) VALUES (:categoria)";
+            $sql = "INSERT INTO categoria (idcategoria,categoria) VALUES (:valuer,:categoria)";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute(array(':categoria'=>$categoria));
+            $stmt->execute(array(':categoria'=>$categoria,':valuer'=>$valuer));
 
     header("Location: criar_classificacao.html");
 

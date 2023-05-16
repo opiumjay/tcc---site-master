@@ -7,22 +7,22 @@ if (!empty($_POST)) {
 
   try {
 
-    $formato = $_POST['formato'];
+    $cor = $_POST['cor'];    
     $valuer = 1;
 
 
-    $sql = "SELECT idformato FROM formato";
+    $sql = "SELECT idcor FROM cor";
     $stmt = $pdo->query($sql);
     $result = $stmt->fetchAll();
 
     foreach ($result as $row) {
       $valuer = $valuer + 1;
             }
-
+    
            
-            $sql = "INSERT INTO formato (idformato,formato) VALUES (:valuer,:formato)";
+            $sql = "INSERT INTO cor (idcor,hex) VALUES (:valuer,:hex)";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute(array(':formato'=>$formato,':valuer'=>$valuer));
+            $stmt->execute(array(':hex'=>$cor,':valuer'=>$valuer));
 
     header("Location: criar_classificacao.html");
 
@@ -34,6 +34,6 @@ if (!empty($_POST)) {
 }
 else {
 
-  header("Location: index.html?msgErro=Erro de acesso.");
+  header("Location: index.php?msgErro=Erro de acesso.");
 }
 ?>

@@ -77,7 +77,7 @@
             <a class="" href="criar_classificacao.html">
                 <img src="../img/navbar/back.png" alt="Bootstrap" width="25" height="25">
             </a>
-            <a class="navbar-brand" style="margin-left: 1rem; font-size: 20px;">Formatos Cadastrados</a>
+            <a class="navbar-brand" style="margin-left: 1rem; font-size: 20px;">Cores Cadastradas</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
                 aria-controls="offcanvasExample">
                 <span class="navbar-toggler-icon"></span>
@@ -149,69 +149,54 @@
         <table class="table table-responsive align-middle" style="color: #e7e7e7;">
             <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td class="text-break">Nome do Formato</td>
+
+                <?php 
+                    
+                    require_once 'conectaBanco.php';
+                    
+					$sql = "SELECT * FROM cor";
+					$stmt = $pdo->query($sql)->fetchAll();
+					?>
+					<?php
+					foreach ($stmt as $row) {?>
+                    
+
+               
+
+
+    <form action="alter.php" method="post" enctype="multipart/form-data">
+
+                    <th scope="row"><?php echo $row['idcor'] ?></th>
+                    <td class="text-break text-center">
+                        <input type="color" class="form-control form-control-color bg-dark border border-dark"
+                            id="exampleColorInput" value="<?php echo $row['hex'] ?>" style="margin-top: -3%;" disabled name="core">
+                        <input type="color" value="<?php echo $row['hex'] ?>" style="margin-top: -3%;"  name="cor" hidden>
+                        <input type="text" value="<?php echo $row['idcor'] ?>" style="margin-top: -3%;"  name="idcor" hidden>
+                    </td>
                     <td>
-                        <div class="d-flex justify-content-end padding">
-                            <a href="alterar_formato.html" class="btn btn-outline-warning"
+                        <p style="margin-top: 1rem;"><?php echo $row['hex'] ?></p>
+                    </td>
+                    <td>
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-outline-warning"
                                 style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
                                 Alterar
-                            </a>
-                            <button type="button" class="btn btn-outline-danger"
+                            </button>
+                        </form>
+
+                        <form action="delete.php" method="post" enctype="multipart/form-data">
+                        <input type="color" value="<?php echo $row['hex'] ?>" style="margin-top: -3%;"  name="cor" hidden>
+                        <input type="text" value="<?php echo $row['idcor'] ?>" style="margin-top: -3%;"  name="idcor" hidden>
+
+                            <button type="submit" class="btn btn-outline-danger"
                                 style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
                                 Excluir
                             </button>
+                        </form>
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td class="text-break">Nome do Formato</td>
-                    <td>
-                        <div class="d-flex justify-content-end padding"">
-                            <button type=" button" class="btn btn-outline-warning"
-                            style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
-                            Alterar
-                            </button>
-                            <button type="button" class="btn btn-outline-danger"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
-                                Excluir
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td class="text-break">Nome do Formato</td>
-                    <td>
-                        <div class="d-flex justify-content-end padding"">
-                            <button type=" button" class="btn btn-outline-warning"
-                            style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
-                            Alterar
-                            </button>
-                            <button type="button" class="btn btn-outline-danger"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
-                                Excluir
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td class="text-break">Nome do Formato</td>
-                    <td>
-                        <div class="d-flex justify-content-end padding"">
-                            <button type=" button" class="btn btn-outline-warning"
-                            style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
-                            Alterar
-                            </button>
-                            <button type="button" class="btn btn-outline-danger"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
-                                Excluir
-                            </button>
-                        </div>
-                    </td>
-                </tr>
+                   <?php } ?>
             </tbody>
         </table>
     </div>

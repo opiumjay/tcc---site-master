@@ -148,72 +148,50 @@
     <div class="d-block table-responsive" style="margin: 5%;">
         <table class="table table-responsive align-middle" style="color: #e7e7e7;">
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td class="text-break">Nome do Formato</td>
-                    <td>
-                        <div class="d-flex justify-content-end padding">
-                            <a href="alterar_formato.html" class="btn btn-outline-warning"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
-                                Alterar
-                            </a>
-                            <button type="button" class="btn btn-outline-danger"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
-                                Excluir
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td class="text-break">Nome do Formato</td>
-                    <td>
-                        <div class="d-flex justify-content-end padding"">
-                            <button type=" button" class="btn btn-outline-warning"
-                            style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
-                            Alterar
-                            </button>
-                            <button type="button" class="btn btn-outline-danger"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
-                                Excluir
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td class="text-break">Nome do Formato</td>
-                    <td>
-                        <div class="d-flex justify-content-end padding"">
-                            <button type=" button" class="btn btn-outline-warning"
-                            style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
-                            Alterar
-                            </button>
-                            <button type="button" class="btn btn-outline-danger"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
-                                Excluir
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td class="text-break">Nome do Formato</td>
-                    <td>
-                        <div class="d-flex justify-content-end padding"">
-                            <button type=" button" class="btn btn-outline-warning"
-                            style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
-                            Alterar
-                            </button>
-                            <button type="button" class="btn btn-outline-danger"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
-                                Excluir
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+                <?php
+
+                require_once 'conectaBanco.php';
+
+                $sql = "SELECT * FROM formato";
+                $stmt = $pdo->query($sql)->fetchAll();
+                ?>
+                <?php
+                foreach ($stmt as $row) { ?>
+                    <form action="alter.php" method="post" enctype="multipart/form-data">
+                        <tr>
+                            <th scope="row">
+                                <?php echo $row['idformato'] ?>
+                            </th>
+                            <td class="text-break">
+                                <?php echo $row['formato'] ?>
+                            </td>
+
+                            <input type="text" value="<?php echo $row['idformato'] ?>" style="margin-top: -3%;"
+                                name="idformato" hidden>
+                            <input type="text" value="<?php echo $row['formato'] ?>" style="margin-top: -3%;" name="formato"
+                                hidden>
+                            <td>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-outline-warning p-2"
+                                        style="margin-right: 4%;">Alterar</button>
+                    </form>
+
+                    <form action="delete.php" method="post" enctype="multipart/form-data">
+                        <input type="text" value="<?php echo $row['idformato'] ?>" style="margin-top: -3%;" name="idformato"
+                            hidden>
+                        <input type="text" value="<?php echo $row['formato'] ?>" style="margin-top: -3%;" name="formato"
+                            hidden>
+                        <button type="submit" class="btn btn-outline-danger p-2">Excluir</button>
+                    </form>
+        </div>
+        </td>
+        </tr>
+
+    <?php } ?>
+
+    </tbody>
+    </table>
     </div>
 
 </body>

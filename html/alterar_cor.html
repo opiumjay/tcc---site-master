@@ -29,6 +29,44 @@
             font-size: 20px;
             font-family: 'Quicksand', sans-serif;
         }
+
+        h5 {
+            margin-top: 2%;
+            margin-bottom: -4%;
+            font-size: 18px;
+        }
+
+        .card {
+            margin-bottom: 5%;
+            background-color: #000000;
+            color: #e7e7e7;
+        }
+
+        .form-text {
+            color: #e7e7e7;
+            margin-bottom: 5%;
+            margin-top: 3%;
+            opacity: 75%;
+        }
+
+        .card-body {
+            margin-top: -5%;
+        }
+
+        .input-text::placeholder {
+            color: #e7e7e7;
+            opacity: 50%;
+        }
+
+        .input-text {
+            color: #e7e7e7;
+            opacity: 80%;
+        }
+
+        .button {
+            color: var(--bs-white);
+            background-color: #303030;
+        }
     </style>
 
 </head>
@@ -74,10 +112,10 @@
     <!--! navbar -->
     <nav class="navbar navbar-dark" style="background-color: #000000;">
         <div class="container-fluid">
-            <a class="" href="criar_classificacao.html">
+            <a class="" href="categorias_cadastradas.html">
                 <img src="../img/navbar/back.png" alt="Bootstrap" width="25" height="25">
             </a>
-            <a class="navbar-brand" style="margin-left: 1rem; font-size: 20px;">Formatos Cadastrados</a>
+            <a class="navbar-brand" style="margin-right: 0; font-size: 20px;">Alterar Cor</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
                 aria-controls="offcanvasExample">
                 <span class="navbar-toggler-icon"></span>
@@ -99,12 +137,6 @@
                         </div>
                         <div class="menu">
                             <ul>
-                                <li>
-                                    <a href="index.html">
-                                        <img class="btnAcervo" src="../img/menu_dark/home.png"
-                                            alt="Ícone da opção acervo">Home
-                                    </a>
-                                </li>
                                 <li>
                                     <a href="acervo.php">
                                         <img class="btnAcervo" src="../img/menu_dark/layout.png"
@@ -140,80 +172,58 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </nav>
 
     <!--div main-->
-    <div class="d-block table-responsive" style="margin: 5%;">
-        <table class="table table-responsive align-middle" style="color: #e7e7e7;">
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td class="text-break">Nome do Formato</td>
-                    <td>
-                        <div class="d-flex justify-content-end padding">
-                            <a href="alterar_formato.html" class="btn btn-outline-warning"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
-                                Alterar
-                            </a>
-                            <button type="button" class="btn btn-outline-danger"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
-                                Excluir
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td class="text-break">Nome do Formato</td>
-                    <td>
-                        <div class="d-flex justify-content-end padding"">
-                            <button type=" button" class="btn btn-outline-warning"
-                            style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
-                            Alterar
-                            </button>
-                            <button type="button" class="btn btn-outline-danger"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
-                                Excluir
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td class="text-break">Nome do Formato</td>
-                    <td>
-                        <div class="d-flex justify-content-end padding"">
-                            <button type=" button" class="btn btn-outline-warning"
-                            style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
-                            Alterar
-                            </button>
-                            <button type="button" class="btn btn-outline-danger"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
-                                Excluir
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td class="text-break">Nome do Formato</td>
-                    <td>
-                        <div class="d-flex justify-content-end padding"">
-                            <button type=" button" class="btn btn-outline-warning"
-                            style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
-                            Alterar
-                            </button>
-                            <button type="button" class="btn btn-outline-danger"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
-                                Excluir
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="d-block" style="margin: 5%;">
+        <div class="card text-center">
+            <div class="card-header">
+                <h5 style="margin-top: 2%; margin-bottom: -4%;">"nome da cor que será alterada"</h5>
+            </div>
+
+            <!--divisor-->
+            <hr class="border border-secondary border-1 opacity-25">
+
+            <div class="card-body">
+                <div class="d-flex justify-content-center p-2">
+                    <input type="color" class="form-control form-control-color bg-dark border border-dark"
+                    id="exampleColorInput" value="#000000" style="margin-top: -3%;">
+                </div>
+                <div id="passwordHelpBlock" class="form-text">
+                    #000000
+                </div>
+                <div class="d-flex justify-content-center p-2" style="margin-top: 2%;">
+                    <a href="categorias_cadastradas.html" class="btn button"
+                        style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 1rem;">
+                        Cancelar
+                    </a>
+                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 1rem; margin-left: 4%;">
+                        Alterar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal de confirmação -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" style="margin-top: 50%; padding: 10%;"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Alterar Cadastro?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center p-2">
+                        <button type="button" class="btn button" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-warning">Salvar Alterações</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </body>
