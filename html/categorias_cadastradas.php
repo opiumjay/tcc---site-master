@@ -148,43 +148,56 @@
     <div class="d-block table-responsive" style="margin: 5%;">
         <table class="table table-borderless" style="color: #e7e7e7;">
             <tbody>
-            <?php 
-                    
-                    require_once 'conectaBanco.php';
-                    
-					$sql = "SELECT * FROM categoria";
-					$stmt = $pdo->query($sql)->fetchAll();
-					?>
-					<?php
-					foreach ($stmt as $row) {?>
-                        <form action="alter.php" method="post" enctype="multipart/form-data">
-                <tr>
-                    <th scope="row"><?php echo $row['idcategoria'] ?></th>
-                    <td class="text-break"><?php echo $row['categoria'] ?></td>
-                    <td>
-                        <div class="d-flex justify-content-end">
-                            
-                    <input type="text" value="<?php echo $row['idcategoria'] ?>" style="margin-top: -3%;"  name="idcategoria" hidden>
-                    <input type="text" value="<?php echo $row['categoria'] ?>" style="margin-top: -3%;"  name="categoria" hidden>
-                            <button type="submit" class="btn btn-outline-warning p-2" style="margin-right: 4%;">Alterar</button>
+                <?php
+
+                require_once 'conectaBanco.php';
+
+                $sql = "SELECT * FROM categoria";
+                $stmt = $pdo->query($sql)->fetchAll();
+                ?>
+                <?php
+                foreach ($stmt as $row) { ?>
+                    <form action="alter.php" method="post" enctype="multipart/form-data">
+                        <tr>
+                            <th scope="row">
+                                <?php echo $row['idcategoria'] ?>
+                            </th>
+                            <td class="text-break">
+                                <?php echo $row['categoria'] ?>
+                            </td>
+                            <td>
+                                <div class="d-flex justify-content-end">
+
+                                    <input type="text" value="<?php echo $row['idcategoria'] ?>" style="margin-top: -3%;"
+                                        name="idcategoria" hidden>
+                                    <input type="text" value="<?php echo $row['categoria'] ?>" style="margin-top: -3%;"
+                                        name="categoria" hidden>
+                                    <button type="submit" class="btn btn-outline-warning p-2"
+                                        style="margin-right: 4%;">Alterar</button>
                     </form>
 
-                            
-                            <form action="delete.php" method="post" enctype="multipart/form-data">
-                    <input type="text" value="<?php echo $row['idcategoria'] ?>" style="margin-top: -3%;"  name="idcategoria" hidden>
-                    <input type="text" value="<?php echo $row['categoria'] ?>" style="margin-top: -3%;"  name="categoria" hidden>
-                            <button type="submit" class="btn btn-outline-danger p-2">Excluir</button>
-                            
-                    </form>
-                        </div>
-                    </td>
-                </tr>
+                    <!-- função de excluir -->
+                    <!-- <form action="delete.php" method="post" enctype="multipart/form-data">
+                        <input type="text" value="<?php echo $row['idcategoria'] ?>" style="margin-top: -3%;"
+                            name="idcategoria" hidden>
+                        <input type="text" value="<?php echo $row['categoria'] ?>" style="margin-top: -3%;" name="categoria"
+                            hidden>
+                        <button type="submit" class="btn btn-outline-danger p-2">Excluir</button>
+                    </form> -->
 
-<?php } ?>
+                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="modal-de-confirmacao"
+                        style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 1rem; margin-left: 4%;">
+                        Alterar
+                    </button>
+        </div>
+        </td>
+        </tr>
 
-                
-            </tbody>
-        </table>
+    <?php } ?>
+
+
+    </tbody>
+    </table>
     </div>
 
 </body>
