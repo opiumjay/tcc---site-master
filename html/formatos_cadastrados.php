@@ -177,13 +177,12 @@
                                         style="margin-right: 4%;">Alterar</button>
                     </form>
 
-                    <form action="delete.php" method="post" enctype="multipart/form-data">
-                        <input type="text" value="<?php echo $row['idformato'] ?>" style="margin-top: -3%;" name="idformato"
-                            hidden>
-                        <input type="text" value="<?php echo $row['formato'] ?>" style="margin-top: -3%;" name="formato"
-                            hidden>
-                        <button type="submit" class="btn btn-outline-danger p-2">Excluir</button>
-                    </form>
+                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 1rem; margin-left: 4%;">
+                        Excluir
+                    </button>
+
         </div>
         </td>
         </tr>
@@ -192,6 +191,34 @@
 
     </tbody>
     </table>
+
+
+
+    <!-- modal de confirmação -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" style="margin-top: 50%; padding: 10%;"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Formato?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer d-flex justify-content-center p-2">
+                    <button type="button" class="btn button" data-bs-dismiss="modal">Cancelar</button>
+                    
+                    <!-- função de excluir -->
+                    <form action="delete.php" method="post" enctype="multipart/form-data">
+                        <input type="text" value="<?php echo $row['idformato'] ?>" style="margin-top: -3%;"
+                            name="idformato" hidden>
+                        <input type="text" value="<?php echo $row['formato'] ?>" style="margin-top: -3%;" name="formato"
+                            hidden>
+                        <button type="submit" class="btn btn-outline-danger p-2">Excluir</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     </div>
 
 </body>
