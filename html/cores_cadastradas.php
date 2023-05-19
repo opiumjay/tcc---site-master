@@ -150,55 +150,88 @@
             <tbody>
                 <tr>
 
-                <?php 
-                    
+                    <?php
+
                     require_once 'conectaBanco.php';
-                    
-					$sql = "SELECT * FROM cor";
-					$stmt = $pdo->query($sql)->fetchAll();
-					?>
-					<?php
-					foreach ($stmt as $row) {?>
-                    
 
-               
+                    $sql = "SELECT * FROM cor";
+                    $stmt = $pdo->query($sql)->fetchAll();
+                    ?>
+                    <?php
+                    foreach ($stmt as $row) { ?>
 
 
-    <form action="alter.php" method="post" enctype="multipart/form-data">
 
-                    <th scope="row"><?php echo $row['idcor'] ?></th>
-                    <td class="text-break text-center">
-                        <input type="color" class="form-control form-control-color bg-dark border border-dark"
-                            id="exampleColorInput" value="<?php echo $row['hex'] ?>" style="margin-top: -3%;" disabled name="core">
-                        <input type="color" value="<?php echo $row['hex'] ?>" style="margin-top: -3%;"  name="cor" hidden>
-                        <input type="text" value="<?php echo $row['idcor'] ?>" style="margin-top: -3%;"  name="idcor" hidden>
-                    </td>
-                    <td>
-                        <p style="margin-top: 1rem;"><?php echo $row['hex'] ?></p>
-                    </td>
-                    <td>
-                        <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-outline-warning"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
-                                Alterar
-                            </button>
+
+
+                        <form action="alter.php" method="post" enctype="multipart/form-data">
+
+                            <th scope="row">
+                                <?php echo $row['idcor'] ?>
+                            </th>
+                            <td class="text-break text-center">
+                                <input type="color" class="form-control form-control-color bg-dark border border-dark"
+                                    id="exampleColorInput" value="<?php echo $row['hex'] ?>" style="margin-top: -3%;"
+                                    disabled name="core">
+                                <input type="color" value="<?php echo $row['hex'] ?>" style="margin-top: -3%;" name="cor"
+                                    hidden>
+                                <input type="text" value="<?php echo $row['idcor'] ?>" style="margin-top: -3%;" name="idcor"
+                                    hidden>
+                            </td>
+                            <td>
+                                <p style="margin-top: 1rem;">
+                                    <?php echo $row['hex'] ?>
+                                </p>
+                            </td>
+                            <td>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-outline-warning"
+                                        style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem; margin-right: 4%;">
+                                        Alterar
+                                    </button>
                         </form>
 
-                        <form action="delete.php" method="post" enctype="multipart/form-data">
-                        <input type="color" value="<?php echo $row['hex'] ?>" style="margin-top: -3%;"  name="cor" hidden>
-                        <input type="text" value="<?php echo $row['idcor'] ?>" style="margin-top: -3%;"  name="idcor" hidden>
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
+                            style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 1rem; margin-left: 4%;">
+                            Excluir
+                        </button>
+        </div>
+        </td>
+        </tr>
+    <?php } ?>
+    </tbody>
+    </table>
 
-                            <button type="submit" class="btn btn-outline-danger"
-                                style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
-                                Excluir
-                            </button>
-                        </form>
-                        </div>
-                    </td>
-                </tr>
-                   <?php } ?>
-            </tbody>
-        </table>
+    <!-- modal de confirmação -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" style="margin-top: 50%; padding: 10%;"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Cor?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer d-flex justify-content-center p-2">
+                    <button type="button" class="btn button" data-bs-dismiss="modal">Cancelar</button>
+                    
+                    <!-- função excluir -->
+                    <form action="delete.php" method="post" enctype="multipart/form-data">
+                        <input type="color" value="<?php echo $row['hex'] ?>" style="margin-top: -3%;" name="cor"
+                            hidden>
+                        <input type="text" value="<?php echo $row['idcor'] ?>" style="margin-top: -3%;" name="idcor"
+                            hidden>
+
+                        <button type="submit" class="btn btn-outline-danger"
+                            style="--bs-btn-padding-y: .30rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .90rem;">
+                            Excluir
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     </div>
 
 </body>
