@@ -48,6 +48,30 @@
                 width: 33.33%;
             }
         }
+
+        .div-ft-btn {
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        .div-ft {
+            position: relative;
+            justify-self: center;
+            align-self: center;
+        }
+
+        .div-btn {
+            grid-row-start: 2;
+        }
+
+        .div-cover {
+            position: absolute;
+            bottom: 0;
+            left: 1;
+            right: 0;
+            height: 30%;
+            width: 30%;
+        }
     </style>
 
 </head>
@@ -87,6 +111,12 @@
         function mudarCorTexto() {
             var input = document.getElementById('meuInput');
             input.style.color = 'blue';
+        }
+    </script>
+
+    <script>
+        function selecionarArquivo() {
+            document.getElementById("input-file").click();
         }
     </script>
 
@@ -164,14 +194,16 @@
     </nav>
 
     <!--div main-->
-    <div class="d-flex red">
+    <div class="div-ft-btn d-grid" style="justify-content: center;">
 
-        <div class="red responsive-div">
-            <img src="../img/menu/profile.png" alt="Bootstrap" width="90" height="90">
+        <!-- div foto de perfil -->
+        <div class="d-inline div-ft"  onclick="selecionarArquivo()">
+            <a href="#"><img src="../img/menu/profile.png" alt="Bootstrap" width="150" height="150"></a>
+
+            <div class="div-cover d-inline-flex">
+                <img src="../img/pg-perfil/camera.png" onclick="selecionarArquivo()">
+            </div>
         </div>
-
-        <!-- -->
-
     </div>
 
 </body>
