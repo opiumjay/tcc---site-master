@@ -4,7 +4,7 @@
 require_once 'conectaBanco.php';
 
 if (!empty($_POST)) {
-
+  if ($_POST['cor'] == null){    header("Location: criar_classificacao.html");} else{
   try {
 
     $cor = $_POST['cor'];    
@@ -30,7 +30,7 @@ if (!empty($_POST)) {
 } catch (PDOException $e) {    echo 'deu ruim';
     echo $e->getMessage();
     echo $e->getCode();
-}
+}}
 }
 else {
 

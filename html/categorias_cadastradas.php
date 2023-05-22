@@ -140,6 +140,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </nav>
 
@@ -147,72 +148,43 @@
     <div class="d-block table-responsive" style="margin: 5%;">
         <table class="table table-borderless" style="color: #e7e7e7;">
             <tbody>
-                <?php
-
-                require_once 'conectaBanco.php';
-
-                $sql = "SELECT * FROM categoria";
-                $stmt = $pdo->query($sql)->fetchAll();
-                ?>
-                <?php
-                foreach ($stmt as $row) { ?>
-                    <form action="alter.php" method="post" enctype="multipart/form-data">
-                        <tr>
-                            <th scope="row">
-                                <?php echo $row['idcategoria'] ?>
-                            </th>
-                            <td class="text-break">
-                                <?php echo $row['categoria'] ?>
-                            </td>
-                            <td>
-                                <div class="d-flex justify-content-end">
-
-                                    <input type="text" value="<?php echo $row['idcategoria'] ?>" style="margin-top: -3%;"
-                                        name="idcategoria" hidden>
-                                    <input type="text" value="<?php echo $row['categoria'] ?>" style="margin-top: -3%;"
-                                        name="categoria" hidden>
-                                    <button type="submit" class="btn btn-outline-warning p-2"
-                                        style="margin-right: 4%;">Alterar</button>
+            <?php 
+                    
+                    require_once 'conectaBanco.php';
+                    
+					$sql = "SELECT * FROM categoria order by idcategoria";
+					$stmt = $pdo->query($sql)->fetchAll();
+					?>
+					<?php
+					foreach ($stmt as $row) {?>
+                        <form action="alterar_categoria.php" method="post" enctype="multipart/form-data">
+                <tr>
+                    <th scope="row"><?php echo $row['idcategoria'] ?></th>
+                    <td class="text-break"><?php echo $row['categoria'] ?></td>
+                    <td>
+                        <div class="d-flex justify-content-end">
+                            
+                    <input type="text" value="<?php echo $row['idcategoria'] ?>" style="margin-top: -3%;"  name="idcategoria" hidden>
+                    <input type="text" value="<?php echo $row['categoria'] ?>" style="margin-top: -3%;"  name="categoria" hidden>
+                            <button type="submit" class="btn btn-outline-warning p-2" style="margin-right: 4%;">Alterar</button>
                     </form>
 
-                    <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"
-                        style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 1rem; margin-left: 4%;">
-                        Excluir
-                    </button>
-        </div>
-        </td>
-        </tr>
-
-    <?php } ?>
-
-
-    </tbody>
-    </table>
-
-    <!-- modal de confirmação -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" style="margin-top: 50%; padding: 10%;"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Categoria?</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-footer d-flex justify-content-center p-2">
-                    <button type="button" class="btn button" data-bs-dismiss="modal">Cancelar</button>
-                    <!-- função de excluir -->
-                    <form action="delete.php" method="post" enctype="multipart/form-data">
-                        <input type="text" value="<?php echo $row['idcategoria'] ?>" style="margin-top: -3%;"
-                            name="idcategoria" hidden>
-                        <input type="text" value="<?php echo $row['categoria'] ?>" style="margin-top: -3%;"
-                            name="categoria" hidden>
-                        <button type="submit" class="btn btn-outline-danger p-2">Excluir</button>
+                            
+                            <form action="delete.php" method="post" enctype="multipart/form-data">
+                    <input type="text" value="<?php echo $row['idcategoria'] ?>" style="margin-top: -3%;"  name="idcategoria" hidden>
+                    <input type="text" value="<?php echo $row['categoria'] ?>" style="margin-top: -3%;"  name="categoria" hidden>
+                            <button type="submit" class="btn btn-outline-danger p-2">Excluir</button>
+                            
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
+                        </div>
+                    </td>
+                </tr>
+
+<?php } ?>
+
+                
+            </tbody>
+        </table>
     </div>
 
 </body>
