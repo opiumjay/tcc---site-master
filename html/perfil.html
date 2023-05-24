@@ -4,8 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js">
 
     <!--fontes-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,99 +24,136 @@
     <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
 
     <style>
-        .btn-space {
-            margin: 0.5rem;
+        h3 {
+            color: var(--text);
+            font-size: 20px;
+            font-family: 'Quicksand', sans-serif;
         }
 
-        .divisoria {
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--detalhes);
-            padding-bottom: 10px;
-            font-size: 18px;
-        }
-
-        .div-adaptavel {
+        .responsive-div {
+            display: block;
             width: 100%;
-            /* Largura de 50% da largura da janela do navegador */
-            height: 100%;
+            box-sizing: border-box;
+            padding: 10px;
         }
 
-        .filho {
-            display: inline-block;
-            /* Torna a div filho em um elemento de bloco em linha */
-            /* Estilos do elemento filho */
+        @media (min-width: 768px) {
+            .responsive-div {
+                width: 50%;
+            }
         }
 
-        .pai {
-            display: flex;
-            justify-content: center;
-            /* Centraliza horizontalmente */
-            align-items: center;
-            /* Centraliza verticalmente */
+        @media (min-width: 992px) {
+            .responsive-div {
+                width: 33.33%;
+            }
         }
 
-        #page-container {
+        .div-ft-btn {
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        .div-ft {
             position: relative;
-            min-height: 93vh;
-            min-height: 93vh;
+            justify-self: center;
+            align-self: center;
+            margin-top: 5%;
         }
 
-        #content-wrap {
-            padding-bottom: 2.5rem;
-            /* Footer height */
+        .div-btn {
+            grid-row-start: 2;
         }
 
-        #footer {
+        .div-cover {
             position: absolute;
             bottom: 0;
-            width: 100%;
-            height: 2.5rem;
-            /* Footer height */
+            left: 1;
+            right: 0;
+            height: 30%;
+            width: 30%;
         }
 
-        .inputtrans {
-            background: transparent !important;
-            border: none !important;
-            color: white !important;
+        .form-text {
+            color: #e7e7e7;
+            margin-bottom: 5%;
+            margin-top: 3%;
+            opacity: 75%;
         }
 
-        ::-webkit-input-placeholder {
-    color:white;
-}
-
-::-moz-placeholder {
-    color:white;
-}
-
-::-ms-placeholder {
-    color:white;
-}
-
-::placeholder {
-    color:white;
-}
-
-        hr {
-            border: 1px solid rgb(255, 255, 255);
+        .card-body {
+            margin-top: -5%;
         }
 
+        .input-text::placeholder {
+            color: #e7e7e7;
+            opacity: 50%;
+        }
+
+        .input-text {
+            color: #e7e7e7;
+            opacity: 80%;
+        }
+
+        .button {
+            color: var(--bs-white);
+            background-color: #303030;
+        }
     </style>
 
 </head>
 
-<body style="background-color: #101010;">
+<body style="background-color: #303030; font-family: 'Quicksand', sans-serif; position: relative;">
     <!--links js off e online-->
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-    <nav class="navbar navbar-dark bg-dark">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+    <!--popper js-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+        crossorigin="anonymous"></script>
+
+    <!--funções que abre e fecha o pop up-->
+    <script>
+        function showPopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "flex";
+        }
+    </script>
+
+    <script>
+        function hidePopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
+    </script>
+
+    <!--mdando a cor do texto da input text-->
+    <script>
+        function mudarCorTexto() {
+            var input = document.getElementById('meuInput');
+            input.style.color = 'blue';
+        }
+    </script>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-dark navbar-expand-sm" style="background-color: #000000;">
         <div class="container-fluid">
-            <div class="  container text-center">
-                <a class="navbar-brand" style="margin-left: 1rem; font-size: 20px;">
-                    <h6>PERFIL</h6>
-                </a>
-            </div>
+            <a class="" href="index.html">
+                <img src="../img/navbar/back.png" alt="Bootstrap" width="25" height="25">
+            </a>
+            <a class="navbar-brand" style="font-size: 20px; margin-left: 13%;">Perfil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--menu-->
             <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasExample"
                 aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header" style="background-color: #000000;">
@@ -120,86 +161,152 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
-                    <div>
+                <div class="offcanvas-body" style="background-color: #303030;">
+                    <div class="d-grid" style="place-items: center;">
                         <div class="userPic">
-                            <img src="../img/profile.png">
-                            <h3>Username</h3>
+                            <img style="width: 30%;" src="../img/menu_dark/perfil.png">
+                            <h1 style="margin-top: 5%; color: #e7e7e7;">Username</h1>
                         </div>
                         <div class="menu">
                             <ul>
                                 <li>
-                                    <a href="acervo.html">
-                                        <img class="btnAcervo" src="../img/menu/grid.png"
+                                    <a href="index.html">
+                                        <img class="btnAcervo" src="../img/menu_dark/home.png"
+                                            alt="Ícone da opção acervo">Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="acervo.php">
+                                        <img class="btnAcervo" src="../img/menu_dark/layout.png"
                                             alt="Ícone da opção acervo">Acervo
                                     </a>
                                 </li>
                                 <li>
                                     <a href="testeopt.html">
-                                        <img class="btnRandom" src="../img/menu/shuffle.png"
+                                        <img class="btnRandom" src="../img/menu_dark/shuffle-arrows.png"
                                             alt="Ícone da opção acervo">Random
                                     </a>
                                 </li>
                                 <li>
                                     <a href="testeopt.html">
-                                        <img class="btnBackup" src="../img/menu/bkp.png"
+                                        <img class="btnBackup" src="../img/menu_dark/copia-de-seguranca.png"
                                             alt="Ícone da opção acervo">Backup
                                     </a>
                                 </li>
                                 <li>
                                     <a href="testeopt.html">
-                                        <img class="btnConfig" src="../img/menu/setting.png"
+                                        <img class="btnConfig" src="../img/menu_dark/config.png"
                                             alt="Ícone da opção acervo">Configurações
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="testeopt.html">
-                                        <img class="btnInfo" src="../img/menu/info.png"
+                                    <a href="infoapp.html">
+                                        <img class="btnInfo" src="../img/menu_dark/informacoes.png"
                                             alt="Ícone da opção acervo">Informações do Aplicativo
                                     </a>
                                 </li>
                             </ul>
                         </div>
-
                     </div>
                 </div>
             </div>
 
         </div>
     </nav>
-    <div class="container-fluid" id="page-container">
-        <div id="content-wrap" class="d-block div-adaptavel">
-            <form method="post" enctype="multipart/form-data">
-                <fieldset>
-                    <center><div class="text-center" style="display: inline-grid;">
-                        <img src="../img/cadusr/profile.png" class="rounded" alt="..." >
-                        <a href="#" style="color: white;">
-                            
-                                Alterar foto
-                        </a>
-                    </div></center>
 
-                    <div class="mb-3">
-                        <label for="profile-pic" class="inputtrans">Selecione uma imagem para o seu perfil:</label>
-                        <input class="inputtrans" type="file" name="profile-pic" id="profile-pic">
-                    </div>
+    <!--div main-->
+    <div class="div-ft-btn d-grid" style="justify-content: center;">
 
-                    <div class="mb-3">
-                        <input class="inputtrans" type="text" name="username" placeholder="NOME DE USUÁRIO">
-                        <hr>
-                    </div>
-                    <div class="mb-3">
-                        <input class="inputtrans" type="email" name="email" placeholder="EMAIL DE USUÁRIO">
-                        <hr>
-                    </div>
-                    <div class="mb-3">
-                        <input class="inputtrans" type="password" name="password" placeholder="SENHA">
-                        <hr>
-                    </div>
+        <!-- div foto de perfil -->
+        <div class="d-inline div-ft">
+            <a href="#"><img src="../img/pg-perfil/perfil default.jpg" alt="Bootstrap" width="150" height="150"></a>
 
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
-                </fieldset>
-            </form>
+            <div class="div-cover d-inline-flex">
+                <img src="../img/pg-perfil/add.png">
+            </div>
+        </div>
+
+        <!--divisor-->
+        <hr class="border border-secondary border-1 opacity-25">
+
+        <div class="input-group mb-3">
+            <input type="text" id="input-nome-do-perfil"
+                class="form-control text-bg-dark p-3 input-text focus-ring focus-ring-secondary text-decoration-none"
+                placeholder="'nome do perfil'" style="background-color: #303030; border-color: #303030;"
+                name="input-nome-do-perfil">
+            <button class="btn btn-outline-warning" type="button" id="button-addon2" data-bs-toggle="modal"
+                data-bs-target="#exampleModal1">Alterar</button>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-dark border-dark" id="addon-wrapping" 
+            style="color: #e7e7e7;">@</span>
+            <input type="text" id="input-email-do-perfil"
+                class="form-control text-bg-dark p-3 input-text focus-ring focus-ring-secondary text-decoration-none"
+                placeholder="'email do perfil'" style="background-color: #303030; border-color: #303030;"
+                name="input-email-do-perfil">
+            <button class="btn btn-outline-warning" type="button" id="button-addon2" data-bs-toggle="modal"
+                data-bs-target="#exampleModal2">Alterar</button>
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="password" id="input-senha-do-perfil"
+                class="form-control text-bg-dark p-3 input-text focus-ring focus-ring-secondary text-decoration-none"
+                placeholder="'senha do perfil'" style="background-color: #303030; border-color: #303030;"
+                name="input-senha-do-perfil">
+            <button class="btn btn-outline-warning" type="button" id="button-addon2" data-bs-toggle="modal"
+                data-bs-target="#exampleModal3">Alterar</button>
+        </div>
+
+        <!-- modal de confirmação nome do perfil-->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            style="margin-top: 55%;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Alterar nome do perfil?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn button" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-warning">Salvar Alterações</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal de confirmação email do perfil-->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            style="margin-top: 55%;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Alterar email do perfil?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn button" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-warning">Salvar Alterações</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal de confirmação senha do perfil-->
+        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            style="margin-top: 55%;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Alterar senha do perfil?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn button" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-warning">Salvar Alterações</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
